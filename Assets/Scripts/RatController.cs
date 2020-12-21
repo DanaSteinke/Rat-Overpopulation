@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RatController : MonoBehaviour
 {
-    
+    /*
     public float speed = 5;
 	public float directionChangeInterval = 1;
 	public float maxHeadingChange = 30;
@@ -100,4 +100,5 @@ public class RatController : MonoBehaviour
 		heading = Random.Range(floor, ceil);
 		targetRotation = new Vector3(0, heading, 0);
 	}
+*/
 }
