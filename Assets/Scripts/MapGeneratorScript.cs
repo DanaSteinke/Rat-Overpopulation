@@ -60,4 +60,8 @@ public int[,] map;
 	floor.transform.localScale = new Vector3(map.GetLength(0)*xOS, 1, map.GetLength(1)*yOS);
 	floor.transform.position = new Vector3((map.GetLength(0)-1)*xOS/2, 0.0f, (map.GetLength(1)-1)*yOS/2);
     }
+
+    public int[,] getMap(){
+	return map;
+    }
 }
