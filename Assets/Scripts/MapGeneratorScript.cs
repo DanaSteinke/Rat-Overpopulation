@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MapGeneratorScript : MonoBehaviour
 {
 public GameObject[] mazeWall;
 public GameObject MainMaze;
 public GameObject floorObject;
+public NavMeshSurface surface;
+
 public float xOS = 10;
 public float yOS = 10;
 public int[,] map = new int [,]{
@@ -29,6 +32,9 @@ public int[,] map = new int [,]{
 		generateMaze(map);
 
 		GlobalScript.SetLayerRecursively(this.gameObject, 2);
+
+
+		surface.BuildNavMesh();
     }
 
     // Update is called once per frame

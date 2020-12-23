@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RatScript : MonoBehaviour
 {
@@ -9,8 +10,11 @@ public class RatScript : MonoBehaviour
     public RatManager rms;
     public GameObject rm;
     public Transform ratTransform;
+
+    public NavMeshAgent agent;
     // Start is called before the first frame update
 
+    public bool newSpawned;
     public float hunger;
     public float energy;
 
@@ -25,12 +29,14 @@ public class RatScript : MonoBehaviour
 
     void Start()
     {
+        agent.enabled = false;
         rb = GetComponent<Rigidbody>();
         ratTransform = GetComponent<Transform>();
 
         rm = GameObject.Find("RatManager");
         rms = rm.GetComponent<RatManager>();
 
+        newSpawned = true;
         hunger = 1.0f;
         energy = 1.0f;
 
@@ -40,17 +46,29 @@ public class RatScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hunger = hunger > 0f ? hunger - 0.02f * Time.deltaTime: 0f;
-        energy = energy > 0f ? energy - 0.005f * Time.deltaTime: 0f;
-
+        if(!newSpawned){
+            agent.enabled = true;
+            hunger = hunger > 0f ? hunger - 0.02f * Time.deltaTime: 0f;
+            energy = energy > 0f ? energy - 0.005f * Time.deltaTime: 0f;
+        }
         currentState.Update(this);
     }
 
     public void objectDropped(){
+        Vector3 pos = this.transform.position;
         Debug.Log("Rat Dropped");
-        rb.isKinematic = false;
-        this.transform.parent = rm.transform;
-        rms.removeRatTrainCell(id);
+        if(newSpawned){
+            rb.isKinematic = false;
+            this.transform.parent = rm.transform;
+            rms.removeRatTrainCell(id);
+            newSpawned = false;
+        }
+    }
+
+    public void OnCollisionEnter(){
+        if(!newSpawned){
+            agent.enabled = true;
+        }
     }
 
     public void SetID(int i){

@@ -16,10 +16,12 @@ public int yOS;
     //public FoodManager fms;
     public MapGeneratorScript mg;
     public int[,] foodMap;
+    public int[,] mazeMap;
 
     void Awake(){
         //foodMap = DeepCopyMap(fms.getFoodMap());
         foodMap  = generateFoodMap(mg.getMap());
+        mazeMap = mg.getMap();
         GlobalScript.print2DArray(foodMap);
     }
 

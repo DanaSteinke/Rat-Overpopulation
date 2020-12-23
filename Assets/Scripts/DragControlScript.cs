@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class DragControlScript : MonoBehaviour
 {
+    public MapGeneratorScript mg;
+
     public GameObject hitObject;
     public bool isDragging;
     public Vector3 screenPosition;
     private Plane movePlane;
+    private int[,] map;
+
     // Start is called before the first frame update
     void Start()
     {
         isDragging = false;
         Vector3 sPoint = new Vector3(0.0f, 20.0f, 0.0f);
         movePlane = new Plane(Vector3.up, sPoint);
+        map = mg.getMap();
     }
 
     // Update is called once per frame
@@ -66,7 +71,11 @@ public class DragControlScript : MonoBehaviour
                     float enter = 0.0f;
                     if(movePlane.Raycast(ray, out enter)){
                         Vector3 hitPoint = ray.GetPoint(enter);
-                        hitObject.transform.position = hitPoint;
+                        Vector3 pos = new Vector3();
+                        pos.x = hitPoint.x < 0f ? 0f : (hitPoint.x > (map.GetLength(0)-1)*10f ? (map.GetLength(0)-1)*10f : hitPoint.x);
+                        pos.z = hitPoint.z < 0f ? 0f : (hitPoint.z > (map.GetLength(1)-1)*10f ? (map.GetLength(1)-1)*10f : hitPoint.z);
+                        pos.y = hitPoint.y;
+                        hitObject.transform.position = pos;
                     }
                 }
             }

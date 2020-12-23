@@ -16,7 +16,7 @@ private string currentTime;
     }
 
     void OnGUI(){
-	labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+	/*labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
 	labelStyle.alignment = TextAnchor.MiddleCenter;
 
 	labelStyle.fontSize = 12 * (width/200);
@@ -25,7 +25,7 @@ private string currentTime;
 	currentTime = Time.time.ToString("f6");
 	currentTime = "Time is: " + currentTime + " sec.";
 
-	GUI.Label(rect, currentTime, labelStyle);
+	GUI.Label(rect, currentTime, labelStyle); */
     }
 
     // Start is called before the first frame update
