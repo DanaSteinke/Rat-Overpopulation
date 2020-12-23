@@ -5,6 +5,7 @@ using UnityEngine;
 public class FoodManager : MonoBehaviour
 {
 public MapGeneratorScript mg;
+public int[,] foodMap;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +74,12 @@ public MapGeneratorScript mg;
 	return result;
     }
 
+	public int[,] getFoodMap(){
+		return foodMap;
+	}
 
+	public void UpdateFoodMap(int[,] map){
+		this.foodMap = map;
+	}
     
 }

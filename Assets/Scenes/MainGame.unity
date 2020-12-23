@@ -955,6 +955,7 @@ MonoBehaviour:
   RatSpawnTrain: []
   xOS: 0
   yOS: 0
+  mg: {fileID: 994772757}
 --- !u!4 &1737495269
 Transform:
   m_ObjectHideFlags: 0
@@ -1035,6 +1036,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RatContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501591627008741687, guid: 150c8a435a13e449e807f171d187700b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 150c8a435a13e449e807f171d187700b, type: 3}
@@ -1154,7 +1160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1913941626
 Transform:
   m_ObjectHideFlags: 0

@@ -9,26 +9,26 @@ public GameObject MainMaze;
 public GameObject floorObject;
 public float xOS = 10;
 public float yOS = 10;
-public int[,] map;
+public int[,] map = new int [,]{
+	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, 
+	{1, 0, 0, 0, 1, 1, 1, 1, 1, 1},
+	{1, 0, 0, 0, 0, 1, 1, 1, 1, 1},
+	{1, 1, 0, 0, 0, 1, 1, 1, 1, 1},
+	{1, 1, 1, 0, 0, 1, 1, 1, 1, 1},
+	{1, 1, 1, 0, 0, 1, 1, 1, 1, 1},
+	{1, 1, 1, 0, 0, 0, 0, 0, 0, 1},
+	{1, 1, 1, 0, 0, 0, 0, 0, 0, 1},
+	{1, 1, 1, 1, 1, 1, 2, 1, 1, 1},
+	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+	};
     // Start is called before the first frame update
     void Start()
     {
         MainMaze = GameObject.Find("MainMaze");
-	map = new int [,]{
-	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, 
-	{1, 0, 0, 0, 1, 1, 1, 1, 1, 1},
-	{1, 0, 0, 0, 1, 1, 1, 1, 1, 1},
-	{1, 1, 0, 1, 1, 1, 1, 1, 1, 1},
-	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	};
-	generateMaze(map);
+	
+		generateMaze(map);
 
-	GlobalScript.SetLayerRecursively(this.gameObject, 2);
+		GlobalScript.SetLayerRecursively(this.gameObject, 2);
     }
 
     // Update is called once per frame
@@ -71,6 +71,6 @@ public int[,] map;
     }
 
     public int[,] getMap(){
-	return map;
+		return map;
     }
 }
