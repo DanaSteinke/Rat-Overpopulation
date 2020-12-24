@@ -10,13 +10,21 @@ public class RatScript : MonoBehaviour
     public RatManager rms;
     public GameObject rm;
     public Transform ratTransform;
-
     public NavMeshAgent agent;
-    // Start is called before the first frame update
+    public Animator anim;
 
     public bool newSpawned;
+    public bool alive;
     public float hunger;
     public float energy;
+    public float HP;
+
+    public float hungerRate;
+    public float energyRate;
+    public float HungerHPRate;
+    public float hungerRecoverRate;
+    public float energyRecoverRate;
+    public float energyHPRecoverRate;
 
     private RatBaseState currentState;
 
@@ -24,11 +32,14 @@ public class RatScript : MonoBehaviour
     public readonly RatLookingForFoodState LookingForFoodState = new RatLookingForFoodState();
     public readonly RatEatingState EatingState = new RatEatingState();
     public readonly RatSleepingState SleepingState = new RatSleepingState();
+    public readonly RatDeathState DeathState = new RatDeathState();
+    public readonly RatSpawnState SpawnState = new RatSpawnState();
 
     public int[,] foodMap;
 
     void Start()
     {
+        Debug.Log("Rat start: " + this.transform.position);
         agent.enabled = false;
         rb = GetComponent<Rigidbody>();
         ratTransform = GetComponent<Transform>();
@@ -36,21 +47,33 @@ public class RatScript : MonoBehaviour
         rm = GameObject.Find("RatManager");
         rms = rm.GetComponent<RatManager>();
 
+        alive = true;
         newSpawned = true;
+        HP = 1.0f;
         hunger = 1.0f;
         energy = 1.0f;
 
-        TransitionToState(IdleState);
+        hungerRate = 0.02f;
+        energyRate = hungerRate/4;
+        hungerRecoverRate = hungerRate*10f;
+        energyRecoverRate = energyRate*10f;
+        energyHPRecoverRate = energyRecoverRate;
+        HungerHPRate = energyHPRecoverRate/2f;
+
+        TransitionToState(SpawnState);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!newSpawned){
-            agent.enabled = true;
-            hunger = hunger > 0f ? hunger - 0.02f * Time.deltaTime: 0f;
-            energy = energy > 0f ? energy - 0.005f * Time.deltaTime: 0f;
+        if(ratTransform.position.z>0){
+            //Time.timeScale = 0;
         }
+        if(!newSpawned && alive){
+            ratRoutine();
+        }
+        
         currentState.Update(this);
     }
 
@@ -61,13 +84,28 @@ public class RatScript : MonoBehaviour
             rb.isKinematic = false;
             this.transform.parent = rm.transform;
             rms.removeRatTrainCell(id);
-            newSpawned = false;
+            
         }
     }
 
-    public void OnCollisionEnter(){
-        if(!newSpawned){
-            agent.enabled = true;
+    public void OnCollisionEnter(Collision other){
+        Debug.Log("collision: " + other);
+        currentState.OnCollisionEnter(this, other);
+    }
+
+    private void ratRoutine(){
+        hunger = hunger > 0f ? hunger - hungerRate * Time.deltaTime: 0f;     
+        energy = energy > 0f ? energy - energyRate * Time.deltaTime: 0f;
+        HealthChangeByHunger();
+
+        if(HP <= 0){
+            TransitionToState(DeathState);
+        }
+    }
+
+    private void HealthChangeByHunger(){
+        if(hunger<0.3f){
+            HP = HP>0f? HP - HungerHPRate * Time.deltaTime : 0f;
         }
     }
 
@@ -96,5 +134,27 @@ public class RatScript : MonoBehaviour
 
     public int[,] getFoodMap(){
         return this.foodMap;
+    }
+
+    public void die(){
+        StopRunning();
+        agent.enabled = false;
+        rb.constraints = RigidbodyConstraints.FreezeRotationZ;
+        ratTransform.RotateAround(ratTransform.position,new Vector3(0f, 0f, 1f), 90);
+        alive = false;
+    }
+
+    public void RunToDestination(Vector3 des){
+        agent.SetDestination(des);
+        anim.CrossFade("Running", 0.1f);
+        anim.SetBool("IsIdle", false);
+    }
+
+    public void StopRunning(){
+        if(agent.enabled){
+            agent.ResetPath();
+        }
+        anim.CrossFade("Idle", 0.1f);
+        anim.SetBool("IsIdle", true);
     }
 }

@@ -20,51 +20,55 @@ public int yOS;
 
     void Awake(){
         //foodMap = DeepCopyMap(fms.getFoodMap());
-        foodMap  = generateFoodMap(mg.getMap());
-        mazeMap = mg.getMap();
-        GlobalScript.print2DArray(foodMap);
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        RatAmount = mg.ratNumber;
+        foodMap = generateFoodMap(mg.getMap());
+        mazeMap = mg.getMap();
+        GlobalScript.print2DArray(foodMap);
+
         RatList = new GameObject[RatAmount];
         RatSpawnTrain = new GameObject[RatAmount];
        
         
         spawnRats();
+                Debug.Log("First Rat: " + RatList[0].transform.position);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void spawnRats(){
         GameObject RatTrain = new GameObject();
         RatTrain.transform.parent = this.transform;
-        GameObject stopper = Instantiate(RatStopper, new Vector3(-10f, 10f, -10f), Quaternion.identity);
+        GameObject stopper = Instantiate(RatStopper, new Vector3(-10f, 0f, -20f), Quaternion.identity);
 
         for(int i=0; i<RatAmount; i++){
             Debug.Log("Rat generated!");
-            Vector3 position = new Vector3((0+i)*10f, 10f, -10f);
+            Vector3 position = new Vector3((0+i)*10f, 0f, -20f);
             GameObject newRatCont = Instantiate(RatContainer, position, Quaternion.identity);
             newRatCont.transform.parent = RatTrain.transform;
 
             Transform rat = newRatCont.transform.GetChild(0);
             rat.gameObject.SendMessage("SetID", i);
-                    Debug.Log(foodMap[1,1]);
-
             rat.gameObject.SendMessage("DownloadFoodMap",foodMap);
 
             RatSpawnTrain[i] = newRatCont;
             RatList[i] = rat.gameObject;
+
+            Debug.Log(i + " " + rat.position);
         }
     }
 
     public void removeRatTrainCell(int id){
-        Debug.Log("remove Cell id: "+id);
+        //Debug.Log("remove Cell id: "+id);
         Destroy(RatSpawnTrain[id]);
         RatSpawnTrain[id] = null;
     }
@@ -94,18 +98,18 @@ public int yOS;
 
 
     public int[,] generateFoodMap(int[,] map){
-	int[,] result = new int[10, 10];
+	int[,] result = new int[map.GetLength(0), map.GetLength(1)];
 	int fX = 0;
 	int fY = 0;
 	for(int i=0; i<map.GetLength(0); i++){
 	    for(int j=0; j<map.GetLength(1); j++){
-		if(map[i, j] == 2){
-		    fX=i;
-		    fY=j;
-		}
-		if(map[i, j] == 1){
-		    result[i, j] =-1;
-		}
+		    if(map[i, j] == 2){
+		        fX=i;
+		        fY=j;
+		    }
+		    if(map[i, j] == 1){
+		        result[i, j] =-1;
+		    }
 	    }
 	}
 	Queue<int[]> q = new Queue<int[]>();

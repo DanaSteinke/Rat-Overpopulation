@@ -12,7 +12,7 @@ public int[,] foodMap;
 	//int[,] foodMap = new int[mg.map.GetLength(0), mg.map.GetLength(1)];
 
 	int[,] foodMap  = generateFoodMap(mg.getMap());
-	Debug.Log(foodMap[1,1]);
+	//Debug.Log(foodMap[1,1]);
     }
 
     // Update is called once per frame

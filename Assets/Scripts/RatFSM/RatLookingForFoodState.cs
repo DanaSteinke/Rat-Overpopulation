@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RatLookingForFoodState : RatBaseState{
     public override void EnterState(RatScript rs){
+        rs.StopRunning();
         int[,] foodMap = rs.getFoodMap();
         int ratX = (int)Mathf.Floor(rs.ratTransform.position.x/10f);
         int ratY = (int)Mathf.Floor(rs.ratTransform.position.z/10f);
@@ -9,10 +10,14 @@ public class RatLookingForFoodState : RatBaseState{
         for(int i=0; i<foodMap.GetLength(0); i++){
             for(int j=0; j<foodMap.GetLength(1); j++){
                 if(foodMap[i, j] == 1){
-                    rs.agent.SetDestination(new Vector3(i*10f, rs.ratTransform.position.y, j*10f));
+                    rs.RunToDestination(new Vector3(i*10f, rs.ratTransform.position.y, j*10f));
                 }
             }
         }
+    }
+
+    public override void OnCollisionEnter(RatScript rs, Collision other){
+        
     }
 
 
@@ -21,7 +26,7 @@ public class RatLookingForFoodState : RatBaseState{
         int ratX = (int)Mathf.Floor(rs.ratTransform.position.x/10f);
         int ratY = (int)Mathf.Floor(rs.ratTransform.position.z/10f);
 
-        if(foodMap[ratX, ratY]<=2){
+        if(foodMap[ratX, ratY]==1){
             rs.TransitionToState(rs.EatingState);
         }
 /*
