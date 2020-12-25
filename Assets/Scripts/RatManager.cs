@@ -10,13 +10,25 @@ public GameObject RatContainer;
 public GameObject RatStopper;
 public GameObject[] RatList;
 public GameObject[] RatSpawnTrain;
+
 public int xOS;
 public int yOS;
 
     //public FoodManager fms;
+    public GameOverManager goms;
     public MapGeneratorScript mg;
+    public PauseControl pcs;
+
     public int[,] foodMap;
     public int[,] mazeMap;
+
+    public int totalRatNumber = 0;
+    public int deadRatNumber = 0;
+    public float SamplingRate = 1f;
+    public float timer = 0;
+    public LinkedList<int> totalRatStack = new LinkedList<int>();
+    public LinkedList<int> deadRatStack = new LinkedList<int>();
+    public bool isGameOver = false;
 
     void Awake(){
         //foodMap = DeepCopyMap(fms.getFoodMap());
@@ -43,6 +55,9 @@ public int yOS;
     // Update is called once per frame
     void Update()
     {
+        if(!isGameOver){
+        sampleGameDataAndCheckGameOver();
+        }
     }
 
     public void spawnRats(){
@@ -148,6 +163,54 @@ public int yOS;
 	}
 
 	return result;
+    }
+
+    public void DropAllNewSpawnedRats(){
+        RatScript currentRat;
+        for(int i=0; i<RatList.GetLength(0); i++){
+            currentRat = RatList[i].GetComponent<RatScript>();
+            if(currentRat.newSpawned){
+                int mapValue = -1;
+            int dX = 0;
+            int dY = 0;
+            while(mapValue <=0 ){
+                dX = Random.Range(1, foodMap.GetLength(0)-1);
+                dY = Random.Range(1, foodMap.GetLength(1)-1);
+                mapValue = foodMap[dX, dY];
+            }
+            Vector3 des = new Vector3(dX*10f, 10f, dY*10f);
+            currentRat.AutoDropRatAtLocation(des);
+            removeRatTrainCell(i);
+            }
+        }
+    }
+
+    public void ratReleased(int id){
+        totalRatNumber++;
+    }
+
+    public void ratDeath(int id){
+        deadRatNumber++;
+    }
+
+    public void gameOver(){
+        //pcs.PauseGame();
+        isGameOver=true;
+        goms.showGameOverPanel(this);
+
+    }
+
+    public void sampleGameDataAndCheckGameOver(){
+        timer = timer + Time.deltaTime;
+        if(timer>= SamplingRate){
+            timer = 0f;
+            totalRatStack.AddLast(totalRatNumber);
+            deadRatStack.AddLast(deadRatNumber);
+            Debug.Log("Sampled data: " + deadRatStack);
+            if(totalRatNumber> 0 && deadRatNumber == totalRatNumber && !isGameOver){
+                gameOver();
+            }   
+        }
     }
 
 }

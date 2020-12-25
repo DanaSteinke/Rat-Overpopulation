@@ -31,7 +31,7 @@ public int[,] bedroomUnit = new int[,]{
 {1, 1, 1, 0},
 {1, 0, 1, 0},
 {1, 0, 1, 0},
-{1, 0, 0, 0},
+{0, 0, 0, 0},
 };
 public int[,] livingRoomUnit = new int[,]{
 {1, 1, 1, 0, 1, 1, 1, 0},
@@ -134,8 +134,8 @@ public int[,] unitPattern = new int[,]{
 			x = ceilSqrt;
 			y = x;
 		}
-		rows = x*16+2;
-		cols = y*16+2;
+		rows = x*16+4;
+		cols = y*16+4;
 
 		int[,] result = new int[rows, cols];
 		for(int i=0; i<x; i++){
@@ -145,17 +145,24 @@ public int[,] unitPattern = new int[,]{
 						if(unitPattern[ip, jp] == 1){
 							for(int ib = 0; ib<bedroomUnit.GetLength(0); ib++){
 								for(int jb = 0; jb<bedroomUnit.GetLength(1); jb++){
-									result[1+i*16 + ip*4 + ib, 1+j*16 + jp*4 + jb] = bedroomUnit[ib, jb];
+									result[2+i*16 + ip*4 + ib, 2+j*16 + jp*4 + jb] = bedroomUnit[ib, jb];
 								}
 							}
 						} else if(unitPattern[ip, jp]==2){
 							for(int il = 0; il<livingRoomUnit.GetLength(0); il++){
 								for(int jl = 0; jl<livingRoomUnit.GetLength(1); jl++){
-									result[1+i*16 + ip*4 + il, 1+j*16 + jp*4 + jl] = livingRoomUnit[il, jl];
+									result[2+i*16 + ip*4 + il, 2+j*16 + jp*4 + jl] = livingRoomUnit[il, jl];
 								}
 							}
 						}
 					}
+				}
+			}
+		}
+		for(int i=0; i<rows; i++){
+			for(int j=0; j<cols; j++){
+				if(i==0 || j==0 || i==rows-1 || j==cols-1){
+					result[i, j] = 1;
 				}
 			}
 		}

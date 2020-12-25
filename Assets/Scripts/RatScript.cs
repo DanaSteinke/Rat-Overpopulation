@@ -78,13 +78,13 @@ public class RatScript : MonoBehaviour
     }
 
     public void objectDropped(){
-        Vector3 pos = this.transform.position;
+        //Vector3 pos = this.transform.position;
         Debug.Log("Rat Dropped");
         if(newSpawned){
             rb.isKinematic = false;
             this.transform.parent = rm.transform;
             rms.removeRatTrainCell(id);
-            
+            rms.ratReleased(id);
         }
     }
 
@@ -142,6 +142,7 @@ public class RatScript : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeRotationZ;
         ratTransform.RotateAround(ratTransform.position,new Vector3(0f, 0f, 1f), 90);
         alive = false;
+        rms.ratDeath(id);
     }
 
     public void RunToDestination(Vector3 des){
@@ -156,5 +157,10 @@ public class RatScript : MonoBehaviour
         }
         anim.CrossFade("Idle", 0.1f);
         anim.SetBool("IsIdle", true);
+    }
+
+    public void AutoDropRatAtLocation(Vector3 pos){
+        ratTransform.position = pos;
+        objectDropped();
     }
 }
