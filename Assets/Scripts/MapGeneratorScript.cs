@@ -8,10 +8,13 @@ public class MapGeneratorScript : MonoBehaviour
 public GameObject[] mazeWall;
 public GameObject MainMaze;
 public GameObject floorObject;
+public GameObject foodBowlModel;
+public GameObject waterBottleModel;
 public NavMeshSurface surface;
 
 public float xOS = 10;
-public float yOS = 10;
+public float yOS = 0.1f;
+public float zOS = 10;
 public int unitNumber;
 public int ratNumber;
 public int[,] defaultmap = new int [,]{
@@ -35,14 +38,17 @@ public int[,] bedroomUnit = new int[,]{
 };
 public int[,] livingRoomUnit = new int[,]{
 {1, 1, 1, 0, 1, 1, 1, 0},
-{1, 0, 0, 0, 0, 0, 1, 0},
+{1, 3, 0, 0, 0, 3, 1, 0},
 {1, 0, 0, 0, 0, 0, 1, 0},
 {0, 0, 0, 2, 0, 0, 0, 0},
 {1, 0, 0, 0, 0, 0, 1, 0},
-{1, 0, 0, 0, 0, 0, 1, 0},
+{1, 3, 0, 0, 0, 3, 1, 0},
 {1, 1, 1, 0, 1, 1, 1, 0},
 {0, 0, 0, 0, 0, 0, 0, 0},
 };
+public static int Wall_Code = 1;
+public static int Food_Bowl_Code = 2;
+public static int Water_Bottle_Code = 3;
 //1 is bedroom 2 is living room
 //each is 4x4
 public int[,] unitPattern = new int[,]{
@@ -83,16 +89,20 @@ public int[,] unitPattern = new int[,]{
 	int col = map.GetLength(1);
 	for(int i=0; i<row; i++){
 	    for(int j=0; j<col; j++){
-		if(map[i, j] == 1){
-		    createMazeWall(i, j);
-		}
+			if(map[i, j] == Wall_Code){
+		    	createMazeWall(i, j);
+			} else if(map[i,j] == Food_Bowl_Code) {
+				createFoodBowl(i, j);
+			} else if(map[i, j] == Water_Bottle_Code){
+				createWaterBottle(i, j);
+			}
 	    }
 	}
 	createFloor(map);
     }
 
     void createMazeWall(int i, int j){
-	Vector3 position = new Vector3(i*xOS, 0.0f, j*yOS);
+	Vector3 position = new Vector3(i*xOS, 5.5f, j*zOS);
 	GameObject wall = Instantiate(mazeWall[0], position, Quaternion.identity);
 	wall.name = "Wall_" + i + "_" + j;
 	wall.transform.parent = this.transform;
@@ -101,17 +111,29 @@ public int[,] unitPattern = new int[,]{
     void createFloor(int[,] map){
 	
 	/*GameObject floor = GameObject.CreatePrimitive(PrimitiveType.Cube);
-	floor.transform.localScale = new Vector3(map.GetLength(0)*xOS, 1, map.GetLength(1)*yOS);
-	floor.transform.position = new Vector3((map.GetLength(0)-1)*xOS/2, 0.0f, (map.GetLength(1)-1)*yOS/2); 
+	floor.transform.localScale = new Vector3(map.GetLength(0)*xOS, 1, map.GetLength(1)*zOS);
+	floor.transform.position = new Vector3((map.GetLength(0)-1)*xOS/2, 0.0f, (map.GetLength(1)-1)*zOS/2); 
 */
 
-	Vector3 position = new Vector3((map.GetLength(0)-1)*xOS/2, 0.0f, (map.GetLength(1)-1)*yOS/2);
+	Vector3 position = new Vector3((map.GetLength(0)-1)*xOS/2, 0.0f, (map.GetLength(1)-1)*zOS/2);
 	GameObject floor = GameObject.Instantiate(floorObject, position, Quaternion.identity);
-	floor.transform.localScale = new Vector3 (map.GetLength(0)*xOS, 1, map.GetLength(1)*yOS);
+	floor.transform.localScale = new Vector3 (map.GetLength(0)*xOS, 1, map.GetLength(1)*zOS);
 	floor.transform.parent = this.transform;
-
-	
     }
+
+	void createFoodBowl(int i, int j){
+		Vector3 position = new Vector3(i*xOS, 2f, j*zOS);
+		GameObject foodBowlObject = Instantiate(foodBowlModel, position, Quaternion.identity);
+		foodBowlObject.name = "foodbowl_"+i+"_"+j;
+		foodBowlObject.transform.parent = this.transform;
+	}
+
+	void createWaterBottle(int i, int j){
+		Vector3 position = new Vector3(i*xOS, 15f, j*zOS);
+		GameObject waterBottleObject = Instantiate(waterBottleModel, position, Quaternion.identity);
+		waterBottleObject.name = "waterBottle_"+i+"_"+j;
+		waterBottleObject.transform.parent = this.transform;
+	}
 
     public int[,] getMap(){
 		return map;

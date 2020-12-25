@@ -116,19 +116,17 @@ public int yOS;
 	int[,] result = new int[map.GetLength(0), map.GetLength(1)];
 	int fX = 0;
 	int fY = 0;
+    Queue<int[]> q = new Queue<int[]>();
 	for(int i=0; i<map.GetLength(0); i++){
 	    for(int j=0; j<map.GetLength(1); j++){
 		    if(map[i, j] == 2){
-		        fX=i;
-		        fY=j;
+		        q.Enqueue(new int[]{i, j});
 		    }
 		    if(map[i, j] == 1){
 		        result[i, j] =-1;
 		    }
 	    }
 	}
-	Queue<int[]> q = new Queue<int[]>();
-	q.Enqueue(new int[]{fX, fY});
 
 	int step=1;
 	while(q.Count != 0){
