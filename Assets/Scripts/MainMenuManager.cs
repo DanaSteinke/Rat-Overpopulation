@@ -22,6 +22,12 @@ public class MainMenuManager : MonoBehaviour
     }
 
     public void StartNewGame(){
+        if(unitNumberInput.text == ""){
+            unitNumberInput.text = "1";
+        }
+        if(ratNumberInput.text == ""){
+            ratNumberInput.text = "10";
+        }
         PlayerPrefs.SetInt("Unit_Number", int.Parse(unitNumberInput.text));
         PlayerPrefs.SetInt("Rat_Number", int.Parse(ratNumberInput.text));
 	    SceneManager.LoadScene("MainGame", LoadSceneMode.Single);
