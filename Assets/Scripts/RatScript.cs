@@ -16,13 +16,16 @@ public class RatScript : MonoBehaviour
     public bool newSpawned;
     public bool alive;
     public float hunger;
+    public float thirst;
     public float energy;
     public float HP;
 
     public float hungerRate;
     public float energyRate;
+    public float thirstRate;
     public float HungerHPRate;
     public float hungerRecoverRate;
+    public float thirstRecoverRate;
     public float energyRecoverRate;
     public float energyHPRecoverRate;
 
@@ -31,11 +34,14 @@ public class RatScript : MonoBehaviour
     public readonly RatIdleState IdleState = new RatIdleState();
     public readonly RatLookingForFoodState LookingForFoodState = new RatLookingForFoodState();
     public readonly RatEatingState EatingState = new RatEatingState();
+    public readonly RatLookingForWaterState LookingForWaterState = new RatLookingForWaterState();
+    public readonly RatDrinkingState DrinkingState = new RatDrinkingState();
     public readonly RatSleepingState SleepingState = new RatSleepingState();
     public readonly RatDeathState DeathState = new RatDeathState();
     public readonly RatSpawnState SpawnState = new RatSpawnState();
 
     public int[,] foodMap;
+    public int[,] waterMap;
 
     void Start()
     {
@@ -51,11 +57,14 @@ public class RatScript : MonoBehaviour
         newSpawned = true;
         HP = 1.0f;
         hunger = 1.0f;
+        thirst = 1.0f;
         energy = 1.0f;
 
         hungerRate = 0.02f;
+        thirstRate = 0.03f;
         energyRate = hungerRate/4;
         hungerRecoverRate = hungerRate*10f;
+        thirstRecoverRate = thirstRate*10f;
         energyRecoverRate = energyRate*10f;
         energyHPRecoverRate = energyRecoverRate;
         HungerHPRate = energyHPRecoverRate/2f;
@@ -96,6 +105,7 @@ public class RatScript : MonoBehaviour
     private void ratRoutine(){
         hunger = hunger > 0f ? hunger - hungerRate * Time.deltaTime: 0f;     
         energy = energy > 0f ? energy - energyRate * Time.deltaTime: 0f;
+        thirst = thirst > 0f ? thirst - thirstRate * Time.deltaTime: 0f;
         HealthChangeByHunger();
 
         if(HP <= 0){
@@ -134,6 +144,19 @@ public class RatScript : MonoBehaviour
 
     public int[,] getFoodMap(){
         return this.foodMap;
+    }
+
+    public void DownloadWaterMap(int[,] map){
+        waterMap = map;
+        Debug.Log(waterMap[1,1]);
+    }
+
+    public void UploadWaterMap(){
+        rms.UpdateWaterMap(this.waterMap);
+    }
+
+    public int[,] getWaterMap(){
+        return this.waterMap;
     }
 
     public void die(){

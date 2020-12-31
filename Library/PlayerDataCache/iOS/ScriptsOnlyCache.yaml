@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CameraController
     - DragControlScript
     - GameOverManager
     - MainMenuManager
@@ -34,6 +35,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -88,6 +90,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1976}
     - Class: 114
+      Script: {instanceID: 2098}
+    - Class: 114
       Script: {instanceID: 2144}
     - Class: 114
       Script: {instanceID: 2176}
@@ -104,17 +108,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2902}
     - Class: 114
-      Script: {instanceID: 3070}
+      Script: {instanceID: 2982}
     - Class: 114
-      Script: {instanceID: 3160}
+      Script: {instanceID: 3072}
     - Class: 114
-      Script: {instanceID: 3230}
+      Script: {instanceID: 3162}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3232}
     - Class: 114
-      Script: {instanceID: 3502}
+      Script: {instanceID: 3374}
     - Class: 114
-      Script: {instanceID: 3506}
+      Script: {instanceID: 3504}
+    - Class: 114
+      Script: {instanceID: 3508}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -189,13 +195,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2902}
     - Class: 114
-      Script: {instanceID: 3050}
+      Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 3070}
+      Script: {instanceID: 3072}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3374}
     - Class: 114
-      Script: {instanceID: 3506}
+      Script: {instanceID: 3508}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -589,6 +595,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: a27df0808749c1dd70b2b18edc75370b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraController
+  - hash:
+      serializedVersion: 2
       Hash: 5cc439bf63c0539d39588e69465ac2ab
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -741,4 +753,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainGame.unity
-  playerPath: /Users/danasteinke/Documents/Rat_XCode_Build/12:25:20
+  playerPath: /Users/danasteinke/Documents/Rat_XCode_Build/12:26:20-2

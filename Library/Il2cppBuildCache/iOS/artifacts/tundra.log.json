@@ -1,8 +1,1 @@
 {"msg":"init","dagFile":"artifacts/tundra.dag","targets":[]}
-{"msg":"newNode","annotation":"Il2Cpp /Users/danasteinke/Desktop/Rat_Overpopulation/Library/Il2cppBuildCache/iOS/il2cppOutput","index":1}
-{"msg":"noderesult","annotation":"Il2Cpp /Users/danasteinke/Desktop/Rat_Overpopulation/Library/Il2cppBuildCache/iOS/il2cppOutput","index":1,"exitcode":0}
-{"msg":"newNode","annotation":"Copy Additional C++ File /Users/danasteinke/Desktop/Rat_Overpopulation/Library/Il2cppBuildCache/iOS/il2cppOutput/UnityClassRegistration.cpp","index":2}
-{"msg":"newNode","annotation":"Copy Additional C++ File /Users/danasteinke/Desktop/Rat_Overpopulation/Library/Il2cppBuildCache/iOS/il2cppOutput/UnityICallRegistration.cpp","index":3}
-{"msg":"noderesult","annotation":"Copy Additional C++ File /Users/danasteinke/Desktop/Rat_Overpopulation/Library/Il2cppBuildCache/iOS/il2cppOutput/UnityClassRegistration.cpp","index":2,"exitcode":0}
-{"msg":"noderesult","annotation":"Copy Additional C++ File /Users/danasteinke/Desktop/Rat_Overpopulation/Library/Il2cppBuildCache/iOS/il2cppOutput/UnityICallRegistration.cpp","index":3,"exitcode":0}
-{"msg":"newNode","annotation":"all_tundra_nodes","index":0}

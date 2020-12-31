@@ -20,6 +20,7 @@ public int yOS;
     public PauseControl pcs;
 
     public int[,] foodMap;
+    public int[,] waterMap;
     public int[,] mazeMap;
 
     public int totalRatNumber = 0;
@@ -40,8 +41,10 @@ public int yOS;
     {
         RatAmount = mg.ratNumber;
         foodMap = generateFoodMap(mg.getMap());
+        waterMap = generateWaterMap(mg.getMap());
         mazeMap = mg.getMap();
         GlobalScript.print2DArray(foodMap);
+        GlobalScript.print2DArray(waterMap);
 
         RatList = new GameObject[RatAmount];
         RatSpawnTrain = new GameObject[RatAmount];
@@ -74,6 +77,7 @@ public int yOS;
             Transform rat = newRatCont.transform.GetChild(0);
             rat.gameObject.SendMessage("SetID", i);
             rat.gameObject.SendMessage("DownloadFoodMap",foodMap);
+            rat.gameObject.SendMessage("DownloadWaterMap", waterMap);
 
             RatSpawnTrain[i] = newRatCont;
             RatList[i] = rat.gameObject;
@@ -98,6 +102,10 @@ public int yOS;
     }*/
 
     public void UpdateFoodMap(int[,] map){
+
+    }
+
+    public void UpdateWaterMap(int[,] map){
 
     }
 
@@ -161,7 +169,56 @@ public int yOS;
 	}
 
 	return result;
-    }
+}
+
+    public int[,] generateWaterMap(int[,] map){
+	int[,] result = new int[map.GetLength(0), map.GetLength(1)];
+	int fX = 0;
+	int fY = 0;
+    Queue<int[]> q = new Queue<int[]>();
+	for(int i=0; i<map.GetLength(0); i++){
+	    for(int j=0; j<map.GetLength(1); j++){
+		    if(map[i, j] == 3){
+		        q.Enqueue(new int[]{i, j});
+		    }
+		    if(map[i, j] == 1){
+		        result[i, j] =-1;
+		    }
+	    }
+	}
+    int step=1;
+	while(q.Count != 0){
+	    int size = q.Count;
+	    for(int i=0; i<size; i++){
+		int[] current = q.Dequeue();
+		int cX = current[0];
+		int cY = current[1];
+		result[cX, cY] = step;
+		//up
+		if(cX>0 && result[cX-1,cY]==0){
+		    q.Enqueue(new int[]{cX-1, cY});
+		    result[cX-1, cY] = step;
+		}
+		//down
+		if(cX<result.GetLength(0)-1 && result[cX+1,cY]==0){
+		    q.Enqueue(new int[]{cX+1, cY});
+		    result[cX+1, cY] = step;
+		}
+		//left
+		if(cY>0 && result[cX,cY-1]==0){
+		    q.Enqueue(new int[]{cX, cY-1});
+		    result[cX, cY-1] = step;
+		}
+		//right
+		if(cY<result.GetLength(1)-1 && result[cX,cY+1]==0){
+		    q.Enqueue(new int[]{cX, cY+1});
+		    result[cX, cY+1] = step;
+		}
+	    }
+	    step++;
+	}
+    return result;
+}
 
     public void DropAllNewSpawnedRats(){
         RatScript currentRat;

@@ -20,6 +20,9 @@ public class RatIdleState : RatBaseState{
         if(rs.hunger<0.5f){
             rs.TransitionToState(rs.LookingForFoodState);
         }
+        else if(rs.thirst<0.5f){
+            rs.TransitionToState(rs.LookingForWaterState);
+        }
         else if(rs.energy < 0.5f){
             rs.TransitionToState(rs.SleepingState);
         }
