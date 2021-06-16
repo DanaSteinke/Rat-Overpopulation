@@ -186,4 +186,13 @@ public class RatScript : MonoBehaviour
         ratTransform.position = pos;
         objectDropped();
     }
+
+    public void checkDead(GameObject obj){
+        if(alive == false){
+            handleDeadRat(obj);
+        }
+    }
+    public void handleDeadRat(GameObject obj){
+        Destroy(obj);
+    }
 }

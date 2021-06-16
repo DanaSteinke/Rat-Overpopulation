@@ -27,7 +27,8 @@ public class RatLookingForFoodState : RatBaseState{
         int ratX = (int)Mathf.Floor(rs.ratTransform.position.x/10f);
         int ratY = (int)Mathf.Floor(rs.ratTransform.position.z/10f);
 
-        if(foodMap[ratX, ratY]==1){
+        Debug.Log("foodMap value = " + foodMap[ratX, ratY]);
+        if(foodMap[ratX, ratY]==2){
             rs.TransitionToState(rs.EatingState);
         }
 

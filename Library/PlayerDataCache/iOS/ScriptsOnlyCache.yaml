@@ -23,12 +23,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -82,45 +76,45 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1520}
+      Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 1698}
+      Script: {instanceID: 1700}
     - Class: 114
-      Script: {instanceID: 1850}
+      Script: {instanceID: 1852}
     - Class: 114
-      Script: {instanceID: 1976}
+      Script: {instanceID: 1978}
     - Class: 114
-      Script: {instanceID: 2098}
+      Script: {instanceID: 2100}
     - Class: 114
-      Script: {instanceID: 2144}
+      Script: {instanceID: 2148}
     - Class: 114
-      Script: {instanceID: 2176}
+      Script: {instanceID: 2180}
     - Class: 114
-      Script: {instanceID: 2228}
+      Script: {instanceID: 2232}
     - Class: 114
-      Script: {instanceID: 2458}
+      Script: {instanceID: 2462}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2668}
     - Class: 114
-      Script: {instanceID: 2748}
+      Script: {instanceID: 2752}
     - Class: 114
-      Script: {instanceID: 2850}
+      Script: {instanceID: 2854}
     - Class: 114
-      Script: {instanceID: 2902}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 2982}
+      Script: {instanceID: 2988}
     - Class: 114
-      Script: {instanceID: 3072}
+      Script: {instanceID: 3078}
     - Class: 114
-      Script: {instanceID: 3162}
+      Script: {instanceID: 3168}
     - Class: 114
-      Script: {instanceID: 3232}
+      Script: {instanceID: 3238}
     - Class: 114
-      Script: {instanceID: 3374}
+      Script: {instanceID: 3380}
     - Class: 114
-      Script: {instanceID: 3504}
+      Script: {instanceID: 3510}
     - Class: 114
-      Script: {instanceID: 3508}
+      Script: {instanceID: 3514}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -173,35 +167,35 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1520}
+      Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 1560}
+      Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 1674}
+      Script: {instanceID: 1676}
     - Class: 114
-      Script: {instanceID: 1850}
+      Script: {instanceID: 1852}
     - Class: 114
-      Script: {instanceID: 2240}
+      Script: {instanceID: 2244}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2668}
     - Class: 114
-      Script: {instanceID: 2686}
+      Script: {instanceID: 2690}
     - Class: 114
-      Script: {instanceID: 2710}
+      Script: {instanceID: 2714}
     - Class: 114
-      Script: {instanceID: 2850}
+      Script: {instanceID: 2854}
     - Class: 114
-      Script: {instanceID: 2888}
+      Script: {instanceID: 2892}
     - Class: 114
-      Script: {instanceID: 2902}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 3052}
+      Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3072}
+      Script: {instanceID: 3078}
     - Class: 114
-      Script: {instanceID: 3374}
+      Script: {instanceID: 3380}
     - Class: 114
-      Script: {instanceID: 3508}
+      Script: {instanceID: 3514}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -283,7 +277,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: be08cd93c7f13bb81bddc9ef9c0f37a7
+      Hash: cea23664a7bf8977bdd1f0dc03bbcdca
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RatScript
@@ -753,4 +747,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainGame.unity
-  playerPath: /Users/danasteinke/Documents/Rat_XCode_Build/12:26:20-2
+  playerPath: /Users/danasteinke/Documents/Rat_XCode_Build/1:1:21-3

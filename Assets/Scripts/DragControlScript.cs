@@ -43,6 +43,11 @@ public class DragControlScript : MonoBehaviour
                         Debug.Log("Rat hit!");
                     }
                     hitObject = hit.collider.gameObject;
+
+                    if(name == "Rat"){
+                        hitObject.SendMessage("checkDead", hitObject);
+                    } 
+                    
                     screenPosition = Camera.main.WorldToScreenPoint(hitObject.transform.position);
                     isDragging = true;
                 }
