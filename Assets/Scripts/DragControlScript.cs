@@ -45,7 +45,7 @@ public class DragControlScript : MonoBehaviour
                     hitObject = hit.collider.gameObject;
 
                     if(name == "Rat"){
-                        BroadcastMessage("checkDead", hitObject);
+                        hitObject.SendMessage("checkDead", hitObject);
                     } 
                     
                     screenPosition = Camera.main.WorldToScreenPoint(hitObject.transform.position);

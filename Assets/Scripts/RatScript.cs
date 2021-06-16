@@ -189,7 +189,10 @@ public class RatScript : MonoBehaviour
 
     public void checkDead(GameObject obj){
         if(alive == false){
-            Destroy(obj);
+            handleDeadRat(obj);
         }
+    }
+    public void handleDeadRat(GameObject obj){
+        Destroy(obj);
     }
 }
