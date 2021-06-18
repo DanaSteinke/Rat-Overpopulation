@@ -45,7 +45,7 @@ public class RatIdleState : RatBaseState{
             mapValue = foodMap[dX, dY];
         }
         Vector3 des = new Vector3(dX*10f, 0f, dY*10f);
-        Debug.Log("new destination: "+des);
+        //Debug.Log("new destination: "+des);
 
         rs.RunToDestination(new Vector3(dX*10f, rs.ratTransform.position.y, dY*10f));
     }
