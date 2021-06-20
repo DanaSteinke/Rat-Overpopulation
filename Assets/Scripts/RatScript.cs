@@ -19,15 +19,20 @@ public class RatScript : MonoBehaviour
     public float thirst;
     public float energy;
     public float HP;
+    public float stress;
+    public float socialActivity;
 
     public float hungerRate;
     public float energyRate;
     public float thirstRate;
+    public float stressRate;
     public float HungerHPRate;
     public float hungerRecoverRate;
     public float thirstRecoverRate;
     public float energyRecoverRate;
     public float energyHPRecoverRate;
+    public float stressDecreaseRate;
+    public float socialActivityDecreaseRate;
 
     private RatBaseState currentState;
 
@@ -59,15 +64,20 @@ public class RatScript : MonoBehaviour
         hunger = 1.0f;
         thirst = 1.0f;
         energy = 1.0f;
+        stress = 0;
+        socialActivity= 50;
 
         hungerRate = 0.02f;
         thirstRate = 0.03f;
         energyRate = hungerRate/4;
+        stressRate = 0.001f;
         hungerRecoverRate = hungerRate*10f;
         thirstRecoverRate = thirstRate*10f;
         energyRecoverRate = energyRate*10f;
         energyHPRecoverRate = energyRecoverRate;
         HungerHPRate = energyHPRecoverRate/2f;
+        stressDecreaseRate = stressRate*10f;
+        socialActivityDecreaseRate = 0.1f;
 
         TransitionToState(SpawnState);
         
@@ -98,14 +108,31 @@ public class RatScript : MonoBehaviour
     }
 
     public void OnCollisionEnter(Collision other){
+        if(other.gameObject.name=="Rat"){
+            Debug.Log("rat collision");
+            IncreaseSocialActivityByCollision();
+        }
         Debug.Log("collision: " + other);
         currentState.OnCollisionEnter(this, other);
     }
 
+    private void IncreaseSocialActivityByCollision(){
+        socialActivity++;
+    }
+
     private void ratRoutine(){
+        socialActivity = socialActivity > 0f ? socialActivity - socialActivityDecreaseRate * Time.deltaTime: 0f;
         hunger = hunger > 0f ? hunger - hungerRate * Time.deltaTime: 0f;     
         energy = energy > 0f ? energy - energyRate * Time.deltaTime: 0f;
         thirst = thirst > 0f ? thirst - thirstRate * Time.deltaTime: 0f;
+        
+        if(socialActivity<10 || socialActivity>200){
+            stress+=stressRate;
+            Debug.Log("stress increase");
+        }
+        else{
+            stress = stress > 0f ? stress - stressDecreaseRate * Time.deltaTime: 0f;
+        }
         HealthChangeByHunger();
 
         if(HP <= 0){
@@ -195,4 +222,6 @@ public class RatScript : MonoBehaviour
     public void handleDeadRat(GameObject obj){
         Destroy(obj);
     }
+
+  
 }

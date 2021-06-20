@@ -106,14 +106,21 @@ MonoBehaviour:
   newSpawned: 0
   alive: 0
   hunger: 0
+  thirst: 0
   energy: 0
   HP: 0
+  stress: 0
+  socialActivity: 0
   hungerRate: 0
   energyRate: 0
+  thirstRate: 0
+  stressRate: 0
   HungerHPRate: 0
   hungerRecoverRate: 0
+  thirstRecoverRate: 0
   energyRecoverRate: 0
   energyHPRecoverRate: 0
+  stressDecreaseRate: 0
 --- !u!195 &745515627633126152
 NavMeshAgent:
   m_ObjectHideFlags: 0

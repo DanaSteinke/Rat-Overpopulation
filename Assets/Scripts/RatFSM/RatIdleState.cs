@@ -8,7 +8,9 @@ public class RatIdleState : RatBaseState{
         {-1, 0},
         {0, -1}
     };
+
     public override void EnterState(RatScript rs){
+        Debug.Log("rat enter idle state");
         moveToRandomDestination(rs);
     }
 
@@ -17,8 +19,9 @@ public class RatIdleState : RatBaseState{
     }
 
     public override void Update(RatScript rs){
-        if(rs.hunger<0.5f){
+        if(rs.hunger<0.5f && rs.stress<1){
             rs.TransitionToState(rs.LookingForFoodState);
+
         }
         else if(rs.thirst<0.5f){
             rs.TransitionToState(rs.LookingForWaterState);
@@ -45,7 +48,7 @@ public class RatIdleState : RatBaseState{
             mapValue = foodMap[dX, dY];
         }
         Vector3 des = new Vector3(dX*10f, 0f, dY*10f);
-        Debug.Log("new destination: "+des);
+        //Debug.Log("new destination: "+des);
 
         rs.RunToDestination(new Vector3(dX*10f, rs.ratTransform.position.y, dY*10f));
     }
