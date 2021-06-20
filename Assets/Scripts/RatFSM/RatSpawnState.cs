@@ -11,6 +11,7 @@ public class RatSpawnState : RatBaseState
             rs.newSpawned = false;
             rs.agent.enabled = true;
         }
+        Debug.Log("rat dropped to ground");
         rs.TransitionToState(rs.IdleState);
     }
 

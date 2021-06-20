@@ -32,6 +32,7 @@ public class RatScript : MonoBehaviour
     public float energyRecoverRate;
     public float energyHPRecoverRate;
     public float stressDecreaseRate;
+    public float socialActivityDecreaseRate;
 
     private RatBaseState currentState;
 
@@ -64,17 +65,19 @@ public class RatScript : MonoBehaviour
         thirst = 1.0f;
         energy = 1.0f;
         stress = 0;
+        socialActivity= 50;
 
         hungerRate = 0.02f;
         thirstRate = 0.03f;
         energyRate = hungerRate/4;
-        stressRate = 0.05f;
+        stressRate = 0.001f;
         hungerRecoverRate = hungerRate*10f;
         thirstRecoverRate = thirstRate*10f;
         energyRecoverRate = energyRate*10f;
         energyHPRecoverRate = energyRecoverRate;
         HungerHPRate = energyHPRecoverRate/2f;
         stressDecreaseRate = stressRate*10f;
+        socialActivityDecreaseRate = 0.1f;
 
         TransitionToState(SpawnState);
         
@@ -118,19 +121,19 @@ public class RatScript : MonoBehaviour
     }
 
     private void ratRoutine(){
+        socialActivity = socialActivity > 0f ? socialActivity - socialActivityDecreaseRate * Time.deltaTime: 0f;
         hunger = hunger > 0f ? hunger - hungerRate * Time.deltaTime: 0f;     
         energy = energy > 0f ? energy - energyRate * Time.deltaTime: 0f;
         thirst = thirst > 0f ? thirst - thirstRate * Time.deltaTime: 0f;
         
-        if(socialActivity<10 || socialActivity>100){
+        if(socialActivity<10 || socialActivity>200){
             stress+=stressRate;
             Debug.Log("stress increase");
         }
         else{
-            stress = stress > 0f ? stress - stressRate * Time.deltaTime: 0f;
+            stress = stress > 0f ? stress - stressDecreaseRate * Time.deltaTime: 0f;
         }
         HealthChangeByHunger();
-
 
         if(HP <= 0){
             TransitionToState(DeathState);
