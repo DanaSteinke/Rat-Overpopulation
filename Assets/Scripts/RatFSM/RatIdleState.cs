@@ -15,13 +15,26 @@ public class RatIdleState : RatBaseState{
     }
 
     public override void OnCollisionEnter(RatScript rs, Collision other){
-        
+        if(other.gameObject.name=="Rat" && !rs.newSpawned && rs.alive){
+            RatScript otherRS = other.gameObject.GetComponent<RatScript>();
+            if(otherRS.alive){
+            Debug.Log("rat collision");
+            rs.IncreaseSocialActivityByCollision();
+            if(Random.Range(0, 1)<rs.actionRate){
+                if(rs.stress<0.5){
+                    rs.TransitionToState(rs.PlayingState);
+                }
+                else{
+                    rs.TransitionToState(rs.FightingState);
+                }
+            }
+            }
+        }
     }
 
     public override void Update(RatScript rs){
         if(rs.hunger<0.5f && rs.stress<1){
             rs.TransitionToState(rs.LookingForFoodState);
-
         }
         else if(rs.thirst<0.5f){
             rs.TransitionToState(rs.LookingForWaterState);
@@ -29,9 +42,11 @@ public class RatIdleState : RatBaseState{
         else if(rs.energy < 0.5f){
             rs.TransitionToState(rs.SleepingState);
         }
+
         else if(rs.agent.remainingDistance<=5f){
             moveToRandomDestination(rs);
         }
+        
     }
 
     private void moveToRandomDestination(RatScript rs){

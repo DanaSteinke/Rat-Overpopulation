@@ -21,6 +21,7 @@ public class RatScript : MonoBehaviour
     public float HP;
     public float stress;
     public float socialActivity;
+    public float actionRate;
 
     public float hungerRate;
     public float energyRate;
@@ -44,6 +45,8 @@ public class RatScript : MonoBehaviour
     public readonly RatSleepingState SleepingState = new RatSleepingState();
     public readonly RatDeathState DeathState = new RatDeathState();
     public readonly RatSpawnState SpawnState = new RatSpawnState();
+    public readonly RatPlayingState PlayingState = new RatPlayingState();
+    public readonly RatFightingState FightingState = new RatFightingState();
 
     public int[,] foodMap;
     public int[,] waterMap;
@@ -66,6 +69,7 @@ public class RatScript : MonoBehaviour
         energy = 1.0f;
         stress = 0;
         socialActivity= 50;
+        actionRate = 0.25f;
 
         hungerRate = 0.02f;
         thirstRate = 0.03f;
@@ -108,15 +112,26 @@ public class RatScript : MonoBehaviour
     }
 
     public void OnCollisionEnter(Collision other){
-        if(other.gameObject.name=="Rat"){
+       /* if(other.gameObject.name=="Rat" && !newSpawned && alive){
+            RatScript otherRS = other.gameObject.GetComponent<RatScript>();
+            if(otherRS.alive){
             Debug.Log("rat collision");
             IncreaseSocialActivityByCollision();
-        }
+            if(Random.Range(0, 1)<actionRate){
+                if(stress<0.5){
+                    TransitionToState(PlayingState);
+                }
+                else{
+                    TransitionToState(FightingState);
+                }
+            }
+            }
+        } */
         Debug.Log("collision: " + other);
         currentState.OnCollisionEnter(this, other);
     }
 
-    private void IncreaseSocialActivityByCollision(){
+    public void IncreaseSocialActivityByCollision(){
         socialActivity++;
     }
 
