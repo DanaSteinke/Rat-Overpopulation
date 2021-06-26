@@ -47,6 +47,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\RatFSM\RatMateState.cs" />
      <Compile Include="Assets\Scripts\RatFSM\RatSleepingState.cs" />
      <Compile Include="Assets\Scripts\RatFSM\RatLookingForFoodState.cs" />
      <Compile Include="Assets\Scripts\RatFSM\RatIdleState.cs" />

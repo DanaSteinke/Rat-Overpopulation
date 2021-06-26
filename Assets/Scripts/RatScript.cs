@@ -22,6 +22,7 @@ public class RatScript : MonoBehaviour
     public float stress;
     public float socialActivity;
     public float actionRate;
+    public float age;
 
     public float hungerRate;
     public float energyRate;
@@ -47,6 +48,7 @@ public class RatScript : MonoBehaviour
     public readonly RatSpawnState SpawnState = new RatSpawnState();
     public readonly RatPlayingState PlayingState = new RatPlayingState();
     public readonly RatFightingState FightingState = new RatFightingState();
+    public readonly RatMateState MateState = new RatMateState();
 
     public int[,] foodMap;
     public int[,] waterMap;
@@ -70,6 +72,7 @@ public class RatScript : MonoBehaviour
         stress = 0;
         socialActivity= 50;
         actionRate = 0.25f;
+        age = 0;
 
         hungerRate = 0.02f;
         thirstRate = 0.03f;
@@ -136,6 +139,7 @@ public class RatScript : MonoBehaviour
     }
 
     private void ratRoutine(){
+        age = age + 0.1f * Time.deltaTime;
         socialActivity = socialActivity > 0f ? socialActivity - socialActivityDecreaseRate * Time.deltaTime: 0f;
         hunger = hunger > 0f ? hunger - hungerRate * Time.deltaTime: 0f;     
         energy = energy > 0f ? energy - energyRate * Time.deltaTime: 0f;
@@ -150,7 +154,7 @@ public class RatScript : MonoBehaviour
         }
         HealthChangeByHunger();
 
-        if(HP <= 0){
+        if(HP <= 0 || age > 10){
             TransitionToState(DeathState);
         }
     }
@@ -236,6 +240,18 @@ public class RatScript : MonoBehaviour
     }
     public void handleDeadRat(GameObject obj){
         Destroy(obj);
+    }
+
+    public bool canRatsMate(){
+        if(age>2 && stress<0.5 && alive){
+            return true;
+        }
+        return false;
+    }
+
+    public void spawnBabyRat(){
+        rms.spawnBabyRat(this);
+
     }
 
   

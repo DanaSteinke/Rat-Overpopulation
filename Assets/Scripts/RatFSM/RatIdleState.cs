@@ -29,6 +29,9 @@ public class RatIdleState : RatBaseState{
                 }
             }
             }
+            if(rs.canRatsMate() && otherRS.canRatsMate()){
+                rs.TransitionToState(rs.MateState);
+            }
         }
     }
 
