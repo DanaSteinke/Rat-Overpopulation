@@ -51,7 +51,7 @@ public int yOS;
        
         
         spawnRats();
-                Debug.Log("First Rat: " + RatList[0].transform.position);
+             //   Debug.Log("First Rat: " + RatList[0].transform.position);
 
     }
 
@@ -69,7 +69,7 @@ public int yOS;
         GameObject stopper = Instantiate(RatStopper, new Vector3(-10f, 0f, -20f), Quaternion.identity);
 
         for(int i=0; i<RatAmount; i++){
-            Debug.Log("Rat generated!");
+         //   Debug.Log("Rat generated!");
             Vector3 position = new Vector3((0+i)*10f, 0f, -20f);
             GameObject newRatCont = Instantiate(RatContainer, position, Quaternion.identity);
             newRatCont.transform.parent = RatTrain.transform;
@@ -82,7 +82,7 @@ public int yOS;
             RatSpawnTrain[i] = newRatCont;
             RatList[i] = rat.gameObject;
 
-            Debug.Log(i + " " + rat.position);
+           // Debug.Log(i + " " + rat.position);
         }
     }
 
@@ -261,7 +261,7 @@ public int yOS;
             timer = 0f;
             totalRatStack.AddLast(totalRatNumber);
             deadRatStack.AddLast(deadRatNumber);
-            Debug.Log("Sampled data: " + deadRatStack);
+       //     Debug.Log("Sampled data: " + deadRatStack);
             if(totalRatNumber> 0 && deadRatNumber == totalRatNumber && !isGameOver){
                 gameOver();
             }   

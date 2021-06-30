@@ -57,10 +57,13 @@ public int[,] unitPattern = new int[,]{
 {1, 0, 0, 1},
 {1, 1, 1, 1},
 };
+
+public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<string, FoodBowlScript>();
+
 	void Awake(){
 		unitNumber = PlayerPrefs.GetInt("Unit_Number") == 0 ? 1 : PlayerPrefs.GetInt("Unit_Number");
 		ratNumber = PlayerPrefs.GetInt("Rat_Number") == 0 ? 10 : PlayerPrefs.GetInt("Rat_Number");
-		Debug.Log(unitNumber + " " + ratNumber);
+		//Debug.Log(unitNumber + " " + ratNumber);
 		map = renderMazeMap(unitNumber);
 	}
     // Start is called before the first frame update
@@ -126,6 +129,9 @@ public int[,] unitPattern = new int[,]{
 		GameObject foodBowlObject = Instantiate(foodBowlModel, position, Quaternion.identity);
 		foodBowlObject.name = "foodbowl_"+i+"_"+j;
 		foodBowlObject.transform.parent = this.transform;
+		FoodBowlScript foodScript = foodBowlObject.GetComponent<FoodBowlScript>();
+		Debug.Log("food amount = " + foodScript.foodAmount);
+		foodScriptDictionary.Add(foodBowlObject.name, foodScript);
 	}
 
 	void createWaterBottle(int i, int j){

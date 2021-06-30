@@ -23,6 +23,7 @@ public class RatScript : MonoBehaviour
     public float socialActivity;
     public float actionRate;
     public float age;
+    public float maxAge;
 
     public float hungerRate;
     public float energyRate;
@@ -73,6 +74,7 @@ public class RatScript : MonoBehaviour
         socialActivity= 50;
         actionRate = 0.25f;
         age = 0;
+        maxAge = 10;
 
         hungerRate = 0.02f;
         thirstRate = 0.03f;
@@ -154,9 +156,11 @@ public class RatScript : MonoBehaviour
         }
         HealthChangeByHunger();
 
-        if(HP <= 0 || age > 10){
+        if(HP <= 0 || age > maxAge){
             TransitionToState(DeathState);
         }
+
+        transform.localScale = new Vector3((maxAge-age)*0.1f,(maxAge-age)*0.1f,(maxAge-age)*0.1f);
     }
 
     private void HealthChangeByHunger(){

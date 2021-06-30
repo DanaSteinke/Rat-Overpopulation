@@ -27,7 +27,7 @@ public class RatLookingForFoodState : RatBaseState{
         int ratX = (int)Mathf.Floor(rs.ratTransform.position.x/10f);
         int ratY = (int)Mathf.Floor(rs.ratTransform.position.z/10f);
 
-        Debug.Log("foodMap value = " + foodMap[ratX, ratY]);
+     //   Debug.Log("foodMap value = " + foodMap[ratX, ratY]);
         if(foodMap[ratX, ratY]==2){
             rs.TransitionToState(rs.EatingState);
         }
@@ -64,6 +64,6 @@ public class RatLookingForFoodState : RatBaseState{
             }
         }
         rs.RunToDestination(new Vector3(target[0]*10f, rs.ratTransform.position.y, target[1]*10f));
-        Debug.Log("Min food path found: " + target);
+      //  Debug.Log("Min food path found: " + target);
     }
 }

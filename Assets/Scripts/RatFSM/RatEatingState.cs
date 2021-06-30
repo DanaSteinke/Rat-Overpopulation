@@ -4,7 +4,7 @@ public class RatEatingState : RatBaseState{
     public override void EnterState(RatScript rs){
         rs.StopRunning();
         rs.agent.velocity = Vector3.zero;
-        Debug.Log("hunger = " + rs.hunger);
+       // Debug.Log("hunger = " + rs.hunger);
     }
 
     public override void OnCollisionEnter(RatScript rs, Collision other){

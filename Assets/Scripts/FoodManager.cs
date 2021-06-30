@@ -6,22 +6,42 @@ public class FoodManager : MonoBehaviour
 {
 public MapGeneratorScript mg;
 public int[,] foodMap;
+
+public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<string, FoodBowlScript>();
+
     // Start is called before the first frame update
     void Start()
     {
+
+		foodScriptDictionary = mg.foodScriptDictionary;
 	//int[,] foodMap = new int[mg.map.GetLength(0), mg.map.GetLength(1)];
 
-	int[,] foodMap  = generateFoodMap(mg.getMap());
+	//int[,] foodMap  = generateFoodMap(mg.getMap());
 	//Debug.Log(foodMap[1,1]);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetMouseButtonDown(0)){
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+       
+            if(Physics.Raycast(ray, out hit, Mathf.Infinity)){
+				Debug.Log("foodManager ray casted");
+                if(hit.collider.name.StartsWith("foodbowl_"))
+                {
+					FoodBowlScript fs = new FoodBowlScript();
+                    foodScriptDictionary.TryGetValue(hit.collider.name, out fs);
+					Debug.Log("food bowl hit" + hit.collider.name);
+					fs.foodAmount=100;
+                }
+                
+            }
+        }
     }
 
-    public int[,] generateFoodMap(int[,] map){
+    /*public int[,] generateFoodMap(int[,] map){
 	int[,] result = new int[10, 10];
 	int fX = 0;
 	int fY = 0;
@@ -35,7 +55,7 @@ public int[,] foodMap;
 		    result[i, j] =-1;
 		}
 	    }
-	}
+	} 
 	Queue<int[]> q = new Queue<int[]>();
 	q.Enqueue(new int[]{fX, fY});
 
@@ -69,10 +89,10 @@ public int[,] foodMap;
 		}
 	    }
 	    step++;
-	}
+	} 
 
 	return result;
-    }
+    } */
 
 	public int[,] getFoodMap(){
 		return foodMap;

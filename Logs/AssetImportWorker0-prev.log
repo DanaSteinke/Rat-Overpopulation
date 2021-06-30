@@ -12,42 +12,42 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51989
+49752
 Successfully changed project path to: /Users/danasteinke/Desktop/Rat_Overpopulation
 /Users/danasteinke/Desktop/Rat_Overpopulation
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 23.53 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 28.86 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.0f1 (3721df5a8b28)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.2.0f1/Unity.app/Contents/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path /Users/danasteinke/Desktop/Rat_Overpopulation/Assets
 GfxDevice: creating device client; threaded=0
-2021-06-24 23:50:08.787 Unity[3263:231730] Color LCD preferred device: Intel(R) UHD Graphics 630 (low power)
-2021-06-24 23:50:08.787 Unity[3263:231730] Metal devices available: 2
-2021-06-24 23:50:08.787 Unity[3263:231730] 0: AMD Radeon Pro 5300M (high power)
-2021-06-24 23:50:08.787 Unity[3263:231730] 1: Intel(R) UHD Graphics 630 (low power)
-2021-06-24 23:50:08.787 Unity[3263:231730] Using device AMD Radeon Pro 5300M (high power)
+2021-06-28 23:43:43.418 Unity[1000:16334] Color LCD preferred device: AMD Radeon Pro 5300M (high power)
+2021-06-28 23:43:43.418 Unity[1000:16334] Metal devices available: 2
+2021-06-28 23:43:43.418 Unity[1000:16334] 0: AMD Radeon Pro 5300M (high power)
+2021-06-28 23:43:43.418 Unity[1000:16334] 1: Intel(R) UHD Graphics 630 (low power)
+2021-06-28 23:43:43.419 Unity[1000:16334] Using device AMD Radeon Pro 5300M (high power)
 Initializing Metal device caps: AMD Radeon Pro 5300M
 Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2020.2.0f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2020.2.0f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = '/Applications/Unity/Hub/Editor/2020.2.0f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56263
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56000
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2020.2.0f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Registered in 0.002234 seconds.
+Registered in 0.000455 seconds.
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 21.30 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 23.96 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.560 seconds
+- Completed reload, in  1.811 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001610 seconds.
+Registered in 0.000346 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for OSXStandalone target not found
 Refreshing native plugins compatible for Editor in 0.18 ms, found 1 plugins.
@@ -56,25 +56,147 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.877 seconds
+- Completed reload, in  0.901 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launching external process: /Applications/Unity/Hub/Editor/2020.2.0f1/Unity.app/Contents/Tools/UnityShaderCompiler
 Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
-Refreshing native plugins compatible for Editor in 0.19 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.22 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1121 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 112.0 MB.
 System memory in use after: 112.1 MB.
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1564.
-Total: 2.270529 ms (FindLiveObjects: 0.205134 ms CreateObjectMapping: 0.042864 ms MarkObjects: 1.895878 ms  DeleteObjects: 0.125530 ms)
+Total: 1.860614 ms (FindLiveObjects: 0.157635 ms CreateObjectMapping: 0.042702 ms MarkObjects: 1.593477 ms  DeleteObjects: 0.065661 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/RatFSM/RatMateState.cs
-  artifactKey: Guid(9265757bde87343fd90215635000da84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/RatFSM/RatMateState.cs using Guid(9265757bde87343fd90215635000da84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '182c02fa7b8780dd34c53fb1af9d612b') in 0.424881 seconds
-  Import took 0.430244 seconds .
+  path: Assets/Art/zebra.mat
+  artifactKey: Guid(b04a5f63e49854ae590f8e3c2ad79fd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/zebra.mat using Guid(b04a5f63e49854ae590f8e3c2ad79fd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e14c697f2694b78361560a90d3f0446') in 1.395505 seconds
+  Import took 1.398319 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 762.349160 seconds.
+  path: Assets/Scripts/FoodBowlScript.cs
+  artifactKey: Guid(fb46a95dbf7104339ba7f592209385b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/FoodBowlScript.cs using Guid(fb46a95dbf7104339ba7f592209385b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa741404d005ad84be65434fa97497d9') in 0.369294 seconds
+  Import took 0.371709 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000385 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.000 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1106 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 123.9 MB.
+System memory in use after: 124.0 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1607.
+Total: 1.556682 ms (FindLiveObjects: 0.158963 ms CreateObjectMapping: 0.036929 ms MarkObjects: 1.345298 ms  DeleteObjects: 0.014356 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 3609.731138 seconds.
+  path: Assets/Objects/Rat.prefab
+  artifactKey: Guid(5126a54c2a60f4d5a8a347fa91dd7eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Rat.prefab using Guid(5126a54c2a60f4d5a8a347fa91dd7eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.MonoBehaviour:.ctor () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/MonoBehaviour.bindings.cs:20)
+RatManager:.ctor () (at Assets/Scripts/RatManager.cs:31)
+RatMateState:.ctor () (at Assets/Scripts/RatFSM/RatMateState.cs:5)
+RatScript:.ctor () (at Assets/Scripts/RatScript.cs:52)
+
+[Assets/Scripts/RatManager.cs line 31]
+
+You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.MonoBehaviour:.ctor () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/MonoBehaviour.bindings.cs:20)
+RatManager:.ctor () (at Assets/Scripts/RatManager.cs:31)
+RatMateState:.ctor () (at Assets/Scripts/RatFSM/RatMateState.cs:5)
+RatScript:.ctor () (at Assets/Scripts/RatScript.cs:52)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:635)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:601)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:97)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:91)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:623)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:868)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /Users/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:33)
+
+[Assets/Scripts/RatManager.cs line 31]
+
+ -> (artifact id: '5dc661d8bf2f97684aa333dfe3c9c762') in 0.504117 seconds
+  Import took 0.506765 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Objects/RatContainer.prefab
+  artifactKey: Guid(150c8a435a13e449e807f171d187700b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/RatContainer.prefab using Guid(150c8a435a13e449e807f171d187700b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.MonoBehaviour:.ctor () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/MonoBehaviour.bindings.cs:20)
+RatManager:.ctor () (at Assets/Scripts/RatManager.cs:31)
+RatMateState:.ctor () (at Assets/Scripts/RatFSM/RatMateState.cs:5)
+RatScript:.ctor () (at Assets/Scripts/RatScript.cs:52)
+
+[Assets/Scripts/RatManager.cs line 31]
+
+You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.MonoBehaviour:.ctor () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/MonoBehaviour.bindings.cs:20)
+RatManager:.ctor () (at Assets/Scripts/RatManager.cs:31)
+RatMateState:.ctor () (at Assets/Scripts/RatFSM/RatMateState.cs:5)
+RatScript:.ctor () (at Assets/Scripts/RatScript.cs:52)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:635)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:601)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:97)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:91)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:623)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:868)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /Users/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:33)
+
+[Assets/Scripts/RatManager.cs line 31]
+
+ -> (artifact id: 'eed0531f081b1fc27514060600c89278') in 0.014130 seconds
+  Import took 0.016824 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000516 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.765 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.25 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1106 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 140.3 MB.
+System memory in use after: 140.4 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1611.
+Total: 2.153433 ms (FindLiveObjects: 0.174068 ms CreateObjectMapping: 0.051403 ms MarkObjects: 1.905354 ms  DeleteObjects: 0.020645 ms)
 
