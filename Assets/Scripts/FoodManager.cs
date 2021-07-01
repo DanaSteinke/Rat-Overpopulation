@@ -13,7 +13,7 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
     void Start()
     {
 
-		foodScriptDictionary = mg.foodScriptDictionary;
+	//	foodScriptDictionary = mg.foodScriptDictionary;
 	//int[,] foodMap = new int[mg.map.GetLength(0), mg.map.GetLength(1)];
 
 	//int[,] foodMap  = generateFoodMap(mg.getMap());
@@ -28,13 +28,13 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
         RaycastHit hit;
        
             if(Physics.Raycast(ray, out hit, Mathf.Infinity)){
-				Debug.Log("foodManager ray casted");
+
                 if(hit.collider.name.StartsWith("foodbowl_"))
                 {
-					FoodBowlScript fs = new FoodBowlScript();
-                    foodScriptDictionary.TryGetValue(hit.collider.name, out fs);
-					Debug.Log("food bowl hit" + hit.collider.name);
-					fs.foodAmount=100;
+					FoodBowlScript fs = null;
+                    if(foodScriptDictionary.TryGetValue(hit.collider.name, out fs)){
+						fs.RefillFood();
+					}
                 }
                 
             }
@@ -100,6 +100,17 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
 
 	public void UpdateFoodMap(int[,] map){
 		this.foodMap = map;
+	}
+
+	public void UpdateFoodScriptDic(Dictionary<string, FoodBowlScript> dic){
+		this.foodScriptDictionary = dic;
+	}
+
+	public void SetFoodBowlIsClickable(){
+		foreach(KeyValuePair<string, FoodBowlScript> entry in foodScriptDictionary){
+			FoodBowlScript fs = entry.Value;
+			GlobalScript.SetLayerRecursively(fs.gameObject,0);
+		}
 	}
     
 }

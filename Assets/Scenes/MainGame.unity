@@ -1659,6 +1659,7 @@ MonoBehaviour:
   waterBottleModel: {fileID: 5586507106492037289, guid: 99f3d111a15c7405d8eb50bda426a120,
     type: 3}
   surface: {fileID: 625858226}
+  fm: {fileID: 0}
   xOS: 10
   yOS: 10
   zOS: 10
@@ -2768,6 +2769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1913941626}
+  - component: {fileID: 1913941625}
   m_Layer: 0
   m_Name: FoodManager
   m_TagString: Untagged
@@ -2775,6 +2777,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1913941625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913941624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52d0b20a07a647288514ca7c93cd5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mg: {fileID: 994772757}
 --- !u!4 &1913941626
 Transform:
   m_ObjectHideFlags: 0

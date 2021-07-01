@@ -613,3 +613,127 @@ Received Import Request.
 Start importing Assets/Objects/FoodBowl.prefab using Guid(1c76496a9e4f8427c9ca227916787ad1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1425713f4ffbba18bff39c4c94150bf8') in 0.019471 seconds
   Import took 0.022115 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001162 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.019 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1106 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 128.5 MB.
+System memory in use after: 128.6 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1612.
+Total: 1.291156 ms (FindLiveObjects: 0.124372 ms CreateObjectMapping: 0.032374 ms MarkObjects: 1.121230 ms  DeleteObjects: 0.011561 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000504 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.18 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.931 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.24 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1106 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 129.2 MB.
+System memory in use after: 129.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1614.
+Total: 1.653096 ms (FindLiveObjects: 0.280471 ms CreateObjectMapping: 0.064959 ms MarkObjects: 1.258598 ms  DeleteObjects: 0.047148 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000433 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.18 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.815 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.21 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1106 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 129.0 MB.
+System memory in use after: 129.1 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1616.
+Total: 1.315710 ms (FindLiveObjects: 0.148282 ms CreateObjectMapping: 0.035094 ms MarkObjects: 1.120097 ms  DeleteObjects: 0.011254 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 142843.467335 seconds.
+  path: Assets/Scripts/MapGeneratorScript.cs
+  artifactKey: Guid(310c637a8666747cb828b5d88cc04f06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapGeneratorScript.cs using Guid(310c637a8666747cb828b5d88cc04f06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20d72faf5ad13cc74af1518c7ae5740f') in 0.042892 seconds
+  Import took 0.057001 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 86.913575 seconds.
+  path: Assets/Scripts/MapGeneratorScript.cs
+  artifactKey: Guid(310c637a8666747cb828b5d88cc04f06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapGeneratorScript.cs using Guid(310c637a8666747cb828b5d88cc04f06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e202f4dec289b469bbec48f2f6452ef9') in 0.001491 seconds
+  Import took 0.003806 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 60.948598 seconds.
+  path: Assets/Scripts/FoodBowlScript.cs
+  artifactKey: Guid(fb46a95dbf7104339ba7f592209385b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/FoodBowlScript.cs using Guid(fb46a95dbf7104339ba7f592209385b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0653070db4a7cdee4515dd44d54c9a5f') in 0.001722 seconds
+  Import took 0.003837 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000467 seconds.
+  path: Assets/Scripts/FoodBowlScript.cs
+  artifactKey: Guid(fb46a95dbf7104339ba7f592209385b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/FoodBowlScript.cs using Guid(fb46a95dbf7104339ba7f592209385b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0653070db4a7cdee4515dd44d54c9a5f') in 0.001635 seconds
+  Import took 0.003730 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000446 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.21 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.062 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.21 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1106 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 129.6 MB.
+System memory in use after: 129.7 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1618.
+Total: 1.508050 ms (FindLiveObjects: 0.211912 ms CreateObjectMapping: 0.040021 ms MarkObjects: 1.226722 ms  DeleteObjects: 0.028233 ms)
+

@@ -12,6 +12,8 @@ public GameObject foodBowlModel;
 public GameObject waterBottleModel;
 public NavMeshSurface surface;
 
+public FoodManager fm;
+
 public float xOS = 10;
 public float yOS = 0.1f;
 public float zOS = 10;
@@ -76,6 +78,9 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
 		generateMaze(map);
 
 		GlobalScript.SetLayerRecursively(this.gameObject, 2);
+
+		fm.UpdateFoodScriptDic(foodScriptDictionary);
+		fm.SetFoodBowlIsClickable();
 
 
 		surface.BuildNavMesh();

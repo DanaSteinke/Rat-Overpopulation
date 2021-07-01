@@ -20,4 +20,8 @@ public class FoodBowlScript : MonoBehaviour
     public void RatEating(){
         foodAmount--;
     }
+
+    public void RefillFood(){
+        foodAmount = 100;
+    }
 }

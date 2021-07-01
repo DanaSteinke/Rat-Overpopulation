@@ -36,6 +36,7 @@ public class DragControlScript : MonoBehaviour
             #endif
             Ray ray = Camera.main.ScreenPointToRay(position);
             RaycastHit hit;
+
                 if(Physics.Raycast(ray, out hit)){
                     var name = hit.collider.name;
                     Debug.Log(name + "hit");
@@ -59,7 +60,7 @@ public class DragControlScript : MonoBehaviour
                 if(Input.GetMouseButtonUp(0)){
                     #endif
 
-                    if(hitObject!=null){
+                    if(hitObject!=null && isDragging){
                         sendDropMessage(hitObject);
                     }
                     isDragging = false;
