@@ -308,4 +308,9 @@ public int yOS;
         string text = "+1";
         ptc.PopupYellowText(text, rs.ratTransform);
     }
+
+    public void popUpRatDrinkingText(RatScript rs){
+        string text = "+1";
+        ptc.PopupBlueText(text, rs.ratTransform);
+    }
 }

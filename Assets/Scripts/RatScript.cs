@@ -315,5 +315,9 @@ public class RatScript : MonoBehaviour
     public void popUpRatEatingText(){
         rms.popUpRatEatingText(this);
     }
+
+    public void popUpRatDrinkingText(){
+        rms.popUpRatDrinkingText(this);
+    }
   
 }

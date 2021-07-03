@@ -26,7 +26,12 @@ public class PopupTextController : MonoBehaviour
     }
 
     public void PopupYellowText(string text, Transform location){
-        Color32 yellowTextColor = new Color32(214, 195, 21, 255);
+        Color32 yellowTextColor = new Color32(255, 185, 0, 255);
         CreatePopupText(text, location, yellowTextColor);
+    }
+
+    public void PopupBlueText(string text, Transform location){
+        Color32 blueTextColor = new Color32(73, 67, 229, 255);
+        CreatePopupText(text, location, blueTextColor);
     }
 }

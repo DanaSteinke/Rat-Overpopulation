@@ -602,3 +602,189 @@ System memory in use after: 126.1 MB.
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1607.
 Total: 1.526451 ms (FindLiveObjects: 0.188297 ms CreateObjectMapping: 0.039074 ms MarkObjects: 1.284900 ms  DeleteObjects: 0.013198 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000501 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.19 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.883 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1108 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.2 MB.
+System memory in use after: 126.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1609.
+Total: 1.542858 ms (FindLiveObjects: 0.146787 ms CreateObjectMapping: 0.038170 ms MarkObjects: 1.343360 ms  DeleteObjects: 0.013484 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000396 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.937 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1108 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.2 MB.
+System memory in use after: 126.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1611.
+Total: 1.495309 ms (FindLiveObjects: 0.152084 ms CreateObjectMapping: 0.039176 ms MarkObjects: 1.290488 ms  DeleteObjects: 0.012542 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000512 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.19 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.893 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.21 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1108 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.6 MB.
+System memory in use after: 126.7 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1613.
+Total: 1.942211 ms (FindLiveObjects: 0.241044 ms CreateObjectMapping: 0.051226 ms MarkObjects: 1.633885 ms  DeleteObjects: 0.014802 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000368 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.914 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.19 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1108 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.7 MB.
+System memory in use after: 126.8 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1615.
+Total: 1.484673 ms (FindLiveObjects: 0.144314 ms CreateObjectMapping: 0.036516 ms MarkObjects: 1.289855 ms  DeleteObjects: 0.012924 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1037.217813 seconds.
+  path: Assets/Objects/PopupTextContainer.prefab
+  artifactKey: Guid(a2c916a1432094675aa7f10077d1f8e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/PopupTextContainer.prefab using Guid(a2c916a1432094675aa7f10077d1f8e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c19fb7aa8b5f5748f921b74f656dbca') in 0.089793 seconds
+  Import took 0.092196 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.909463 seconds.
+  path: Assets/Scripts/RatFSM/RatDrinkingState.cs
+  artifactKey: Guid(1c53ad546cdd74393944b6d0eb3089c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RatFSM/RatDrinkingState.cs using Guid(1c53ad546cdd74393944b6d0eb3089c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56581b22f499543c3d561eeebae2620a') in 0.002098 seconds
+  Import took 0.004369 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004132 seconds.
+  path: Assets/Scripts/RatFSM/RatDrinkingState.cs
+  artifactKey: Guid(1c53ad546cdd74393944b6d0eb3089c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RatFSM/RatDrinkingState.cs using Guid(1c53ad546cdd74393944b6d0eb3089c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56581b22f499543c3d561eeebae2620a') in 0.001548 seconds
+  Import took 0.003477 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 238.526483 seconds.
+  path: Assets/Scripts/RatFSM/RatDrinkingState.cs
+  artifactKey: Guid(1c53ad546cdd74393944b6d0eb3089c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RatFSM/RatDrinkingState.cs using Guid(1c53ad546cdd74393944b6d0eb3089c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a952bd6ebf0e5bc1ecac1e587742a211') in 0.001712 seconds
+  Import took 0.004347 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000391 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.19 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.841 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.27 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1108 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.0 MB.
+System memory in use after: 127.2 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1617.
+Total: 1.324213 ms (FindLiveObjects: 0.128437 ms CreateObjectMapping: 0.034674 ms MarkObjects: 1.148047 ms  DeleteObjects: 0.011903 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000350 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.19 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.842 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1108 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.3 MB.
+System memory in use after: 127.4 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1619.
+Total: 1.667558 ms (FindLiveObjects: 0.218101 ms CreateObjectMapping: 0.057356 ms MarkObjects: 1.376726 ms  DeleteObjects: 0.014581 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 366.926724 seconds.
+  path: Assets/Scripts/RatFSM/RatLookingForFoodState.cs
+  artifactKey: Guid(d98ba814cad2341fb8a1f26b9b103644) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RatFSM/RatLookingForFoodState.cs using Guid(d98ba814cad2341fb8a1f26b9b103644) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea74ee54a5601b27a88a91919e53002') in 0.003525 seconds
+  Import took 0.005393 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002627 seconds.
+  path: Assets/Scripts/RatFSM/RatLookingForFoodState.cs
+  artifactKey: Guid(d98ba814cad2341fb8a1f26b9b103644) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RatFSM/RatLookingForFoodState.cs using Guid(d98ba814cad2341fb8a1f26b9b103644) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea74ee54a5601b27a88a91919e53002') in 0.001303 seconds
+  Import took 0.002920 seconds .
+
