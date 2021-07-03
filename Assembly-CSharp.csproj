@@ -47,10 +47,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\RatFSM\RatMateState.cs" />
      <Compile Include="Assets\Scripts\RatFSM\RatSleepingState.cs" />
      <Compile Include="Assets\Scripts\RatFSM\RatLookingForFoodState.cs" />
      <Compile Include="Assets\Scripts\RatFSM\RatIdleState.cs" />
      <Compile Include="Assets\Scripts\RatFSM\RatDeathState.cs" />
+     <Compile Include="Assets\Scripts\RatFSM\RatFightingState.cs" />
      <Compile Include="Assets\Scripts\RatScript.cs" />
      <Compile Include="Assets\Scripts\GlobalScript.cs" />
      <Compile Include="Assets\Scripts\RatController.cs" />
@@ -70,7 +72,9 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\GameOverManager.cs" />
+     <Compile Include="Assets\Scripts\FoodBowlScript.cs" />
      <Compile Include="Assets\Scripts\RatManager.cs" />
+     <Compile Include="Assets\Scripts\RatFSM\RatPlayingState.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

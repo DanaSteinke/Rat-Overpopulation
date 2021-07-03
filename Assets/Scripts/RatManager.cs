@@ -40,9 +40,9 @@ public int yOS;
     void Start()
     {
         RatAmount = mg.ratNumber;
-        foodMap = generateFoodMap(mg.getMap());
-        waterMap = generateWaterMap(mg.getMap());
-        mazeMap = mg.getMap();
+        mazeMap = HardCopyMazeMap(mg.getMap());
+        foodMap = generateFoodMap(mazeMap);
+        waterMap = generateWaterMap(mazeMap);
         GlobalScript.print2DArray(foodMap);
         GlobalScript.print2DArray(waterMap);
 
@@ -51,7 +51,7 @@ public int yOS;
        
         
         spawnRats();
-                Debug.Log("First Rat: " + RatList[0].transform.position);
+             //   Debug.Log("First Rat: " + RatList[0].transform.position);
 
     }
 
@@ -69,7 +69,7 @@ public int yOS;
         GameObject stopper = Instantiate(RatStopper, new Vector3(-10f, 0f, -20f), Quaternion.identity);
 
         for(int i=0; i<RatAmount; i++){
-            Debug.Log("Rat generated!");
+         //   Debug.Log("Rat generated!");
             Vector3 position = new Vector3((0+i)*10f, 0f, -20f);
             GameObject newRatCont = Instantiate(RatContainer, position, Quaternion.identity);
             newRatCont.transform.parent = RatTrain.transform;
@@ -78,11 +78,12 @@ public int yOS;
             rat.gameObject.SendMessage("SetID", i);
             rat.gameObject.SendMessage("DownloadFoodMap",foodMap);
             rat.gameObject.SendMessage("DownloadWaterMap", waterMap);
+            rat.gameObject.SendMessage("DownloadMazeMap", mazeMap);
 
             RatSpawnTrain[i] = newRatCont;
             RatList[i] = rat.gameObject;
 
-            Debug.Log(i + " " + rat.position);
+           // Debug.Log(i + " " + rat.position);
         }
     }
 
@@ -261,11 +262,44 @@ public int yOS;
             timer = 0f;
             totalRatStack.AddLast(totalRatNumber);
             deadRatStack.AddLast(deadRatNumber);
-            Debug.Log("Sampled data: " + deadRatStack);
+       //     Debug.Log("Sampled data: " + deadRatStack);
             if(totalRatNumber> 0 && deadRatNumber == totalRatNumber && !isGameOver){
                 gameOver();
             }   
         }
     }
 
+    public void spawnBabyRat(RatScript rs){
+        GameObject newRat = Instantiate(RatObject, rs.gameObject.transform.position, Quaternion.identity);
+        newRat.name = "Rat";
+        newRat.gameObject.SendMessage("DownloadFoodMap",foodMap);
+        newRat.gameObject.SendMessage("DownloadWaterMap", waterMap);
+        newRat.gameObject.SendMessage("DownloadMazeMap", mazeMap);
+        newRat.gameObject.SendMessage("releaseNewSpawnedRat");
+        newRat.transform.parent = this.transform;
+    }
+
+    public int[,] HardCopyMazeMap(int[,] map){
+        int[,] result = new int[map.GetLength(0), map.GetLength(1)];
+        for(int i=0; i<map.GetLength(0); i++){
+            for(int j=0; j<map.GetLength(1); j++){
+                result[i,j] = map[i,j];
+            }
+        }
+        return result;
+    }
+
+    public void UpdateMazeMapByFoodBowls(Dictionary<string, FoodBowlScript> dic){
+        int [] loc = new int[2];
+        foreach(KeyValuePair<string, FoodBowlScript> entry in dic){
+            FoodBowlScript fs = entry.Value;
+            loc = fs.getLocation();
+            mazeMap[loc[0], loc[1]] = fs.foodAmount > 0f ? mazeMap[loc[0], loc[1]]: GlobalScript.Wall_Code;
+        }
+        
+        foodMap = generateFoodMap(mazeMap);
+        Debug.Log("food map generated" + foodMap[8,8]);
+        //Time.timeScale=0;
+        
+    }
 }
