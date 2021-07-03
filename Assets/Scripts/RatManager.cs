@@ -10,6 +10,7 @@ public GameObject RatContainer;
 public GameObject RatStopper;
 public GameObject[] RatList;
 public GameObject[] RatSpawnTrain;
+public PopupTextController ptc;
 
 public int xOS;
 public int yOS;
@@ -301,5 +302,10 @@ public int yOS;
         Debug.Log("food map generated" + foodMap[8,8]);
         //Time.timeScale=0;
         
+    }
+
+    public void popUpRatEatingText(RatScript rs){
+        string text = "+1";
+        ptc.PopupYellowText(text, rs.ratTransform);
     }
 }

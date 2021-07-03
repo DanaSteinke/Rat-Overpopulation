@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RatEatingState : RatBaseState{
     private string foodBowlName;
+    private float popupTextTime;
     
     public override void EnterState(RatScript rs){
         int[,] foodMap = rs.getFoodMap();
@@ -32,10 +33,16 @@ public class RatEatingState : RatBaseState{
         Debug.Log("foodBowlName = " + rs.foodBowlName);
         if(rs.eatFoodFromBowl() && rs.hunger<=1f){
             rs.hunger = rs.hunger<1f ? rs.hunger+ rs.hungerRecoverRate*Time.deltaTime : 1f;
+            if(popupTextTime < Time.time - 1f){
+                popupTextTime = Time.time;
+                rs.popUpRatEatingText();
+            }
         }
         else{
             rs.TransitionToState(rs.IdleState);
         }
+
+        
         
     }
 }

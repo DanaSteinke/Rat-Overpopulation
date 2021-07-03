@@ -311,5 +311,9 @@ public class RatScript : MonoBehaviour
     public bool canFightNow(){
         return timeStamp + fightCoolDownRate > Time.time;
     }
+
+    public void popUpRatEatingText(){
+        rms.popUpRatEatingText(this);
+    }
   
 }
