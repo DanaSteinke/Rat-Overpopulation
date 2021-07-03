@@ -18,16 +18,16 @@ public class RatIdleState : RatBaseState{
         if(other.gameObject.name=="Rat" && !rs.newSpawned && rs.alive){
             RatScript otherRS = other.gameObject.GetComponent<RatScript>();
             if(otherRS.alive){
-            Debug.Log("rat collision");
-            rs.IncreaseSocialActivityByCollision();
-            if(Random.Range(0, 1)<rs.actionRate){
-                if(rs.stress<0.5){
-                    rs.TransitionToState(rs.PlayingState);
+                Debug.Log("rat collision");
+                rs.IncreaseSocialActivityByCollision();
+                if(Random.Range(0, 1)<rs.actionRate){
+                    if(rs.stress<0.5){
+                        rs.TransitionToState(rs.PlayingState);
+                    }
+                    else{
+                        rs.TransitionToState(rs.FightingState);
+                    }
                 }
-                else{
-                    rs.TransitionToState(rs.FightingState);
-                }
-            }
             }
             if(rs.canRatsMate() && otherRS.canRatsMate()){
                 rs.TransitionToState(rs.MateState);
@@ -53,17 +53,17 @@ public class RatIdleState : RatBaseState{
     }
 
     private void moveToRandomDestination(RatScript rs){
-        int[,] foodMap = rs.getFoodMap();
+        int[,] mazeMap = rs.getMazeMap();
         int ratX = (int)Mathf.Floor(rs.ratTransform.position.x/10f);
         int ratY = (int)Mathf.Floor(rs.ratTransform.position.z/10f);
 
         int mapValue = -1;
         int dX = 0;
         int dY = 0;
-        while(mapValue <=0 ){
-            dX = Random.Range(1, foodMap.GetLength(0)-1);
-            dY = Random.Range(1, foodMap.GetLength(1)-1);
-            mapValue = foodMap[dX, dY];
+        while(mapValue != 0 ){
+            dX = Random.Range(1, mazeMap.GetLength(0)-1);
+            dY = Random.Range(1, mazeMap.GetLength(1)-1);
+            mapValue = mazeMap[dX, dY];
         }
         Vector3 des = new Vector3(dX*10f, 0f, dY*10f);
         //Debug.Log("new destination: "+des);

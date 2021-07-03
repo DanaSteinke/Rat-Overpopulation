@@ -109,24 +109,19 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
 	createFloor(map);
     }
 
-    void createMazeWall(int i, int j){
-	Vector3 position = new Vector3(i*xOS, 5.5f, j*zOS);
-	GameObject wall = Instantiate(mazeWall[0], position, Quaternion.identity);
-	wall.name = "Wall_" + i + "_" + j;
-	wall.transform.parent = this.transform;
+	void createMazeWall(int i, int j){
+		Vector3 position = new Vector3(i*xOS, 5.5f, j*zOS);
+		GameObject wall = Instantiate(mazeWall[0], position, Quaternion.identity);
+		wall.name = "Wall_" + i + "_" + j;
+		wall.transform.parent = this.transform;
     }
 
     void createFloor(int[,] map){
-	
-	/*GameObject floor = GameObject.CreatePrimitive(PrimitiveType.Cube);
-	floor.transform.localScale = new Vector3(map.GetLength(0)*xOS, 1, map.GetLength(1)*zOS);
-	floor.transform.position = new Vector3((map.GetLength(0)-1)*xOS/2, 0.0f, (map.GetLength(1)-1)*zOS/2); 
-*/
 
-	Vector3 position = new Vector3((map.GetLength(0)-1)*xOS/2, 0.0f, (map.GetLength(1)-1)*zOS/2);
-	GameObject floor = GameObject.Instantiate(floorObject, position, Quaternion.identity);
-	floor.transform.localScale = new Vector3 (map.GetLength(0)*xOS, 1, map.GetLength(1)*zOS);
-	floor.transform.parent = this.transform;
+		Vector3 position = new Vector3((map.GetLength(0)-1)*xOS/2, 0.0f, (map.GetLength(1)-1)*zOS/2);
+		GameObject floor = GameObject.Instantiate(floorObject, position, Quaternion.identity);
+		floor.transform.localScale = new Vector3 (map.GetLength(0)*xOS, 1, map.GetLength(1)*zOS);
+		floor.transform.parent = this.transform;
     }
 
 	void createFoodBowl(int i, int j){
@@ -135,6 +130,7 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
 		foodBowlObject.name = "foodbowl_"+i+"_"+j;
 		foodBowlObject.transform.parent = this.transform;
 		FoodBowlScript foodScript = foodBowlObject.GetComponent<FoodBowlScript>();
+		foodScript.setLocation(i,j);
 		Debug.Log("food amount = " + foodScript.foodAmount);
 		foodScriptDictionary.Add(foodBowlObject.name, foodScript);
 	}

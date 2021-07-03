@@ -65,6 +65,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodAmount: 0
+  ReloadMapFlag: 0
+  fmo: {fileID: 0}
+  fms: {fileID: 0}
 --- !u!54 &-3824652471336199965
 Rigidbody:
   m_ObjectHideFlags: 0

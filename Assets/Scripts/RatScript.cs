@@ -8,6 +8,8 @@ public class RatScript : MonoBehaviour
     public int id;
     public Rigidbody rb;
     public RatManager rms;
+    public GameObject fmo;
+    public FoodManager fms;
     public GameObject rm;
     public Transform ratTransform;
     public NavMeshAgent agent;
@@ -39,6 +41,8 @@ public class RatScript : MonoBehaviour
 
     private RatBaseState currentState;
 
+    public string foodBowlName;
+
     public readonly RatIdleState IdleState = new RatIdleState();
     public readonly RatLookingForFoodState LookingForFoodState = new RatLookingForFoodState();
     public readonly RatEatingState EatingState = new RatEatingState();
@@ -51,8 +55,10 @@ public class RatScript : MonoBehaviour
     public readonly RatFightingState FightingState = new RatFightingState();
     public readonly RatMateState MateState = new RatMateState();
 
+
     public int[,] foodMap;
     public int[,] waterMap;
+    public int[,] mazeMap;
 
     void Start()
     {
@@ -63,6 +69,9 @@ public class RatScript : MonoBehaviour
 
         rm = GameObject.Find("RatManager");
         rms = rm.GetComponent<RatManager>();
+
+        fmo = GameObject.Find("FoodManager");
+        fms = fmo.GetComponent<FoodManager>();
 
         alive = true;
         newSpawned = true;
@@ -88,6 +97,7 @@ public class RatScript : MonoBehaviour
         stressDecreaseRate = stressRate*10f;
         socialActivityDecreaseRate = 0.1f;
 
+
         TransitionToState(SpawnState);
         
     }
@@ -109,29 +119,24 @@ public class RatScript : MonoBehaviour
         //Vector3 pos = this.transform.position;
         Debug.Log("Rat Dropped");
         if(newSpawned){
-            rb.isKinematic = false;
-            this.transform.parent = rm.transform;
-            rms.removeRatTrainCell(id);
-            rms.ratReleased(id);
+            releaseNewSpawnedRat();
         }
     }
 
+    public void releaseNewSpawnedRat(){
+        if(!rb || !rm || !rms){
+            rb = GetComponent<Rigidbody>();
+            rm = GameObject.Find("RatManager");
+            rms = rm.GetComponent<RatManager>();
+        }
+        rb.isKinematic = false;
+            this.transform.parent = rm.transform;
+            rms.removeRatTrainCell(id);
+            rms.ratReleased(id);
+    }
+
     public void OnCollisionEnter(Collision other){
-       /* if(other.gameObject.name=="Rat" && !newSpawned && alive){
-            RatScript otherRS = other.gameObject.GetComponent<RatScript>();
-            if(otherRS.alive){
-            Debug.Log("rat collision");
-            IncreaseSocialActivityByCollision();
-            if(Random.Range(0, 1)<actionRate){
-                if(stress<0.5){
-                    TransitionToState(PlayingState);
-                }
-                else{
-                    TransitionToState(FightingState);
-                }
-            }
-            }
-        } */
+       
         Debug.Log("collision: " + other);
         currentState.OnCollisionEnter(this, other);
     }
@@ -160,7 +165,7 @@ public class RatScript : MonoBehaviour
             TransitionToState(DeathState);
         }
 
-        transform.localScale = new Vector3((maxAge-age)*0.1f,(maxAge-age)*0.1f,(maxAge-age)*0.1f);
+        transform.localScale = new Vector3((2/9f)*age+(7/9f),(2/9f)*age+(7/9f),(2/9f)*age+(7/9f));
     }
 
     private void HealthChangeByHunger(){
@@ -182,10 +187,10 @@ public class RatScript : MonoBehaviour
         get {return currentState; }
     }
 
+    //using pointer, not a hard copy of the map
     public void DownloadFoodMap(int[,] map){
         foodMap = map;
         Debug.Log(foodMap[1,1]);
-
     }
 
     public void UploadFoodMap(){
@@ -196,6 +201,7 @@ public class RatScript : MonoBehaviour
         return this.foodMap;
     }
 
+    //using pointer, not a hard copy of the map
     public void DownloadWaterMap(int[,] map){
         waterMap = map;
         Debug.Log(waterMap[1,1]);
@@ -207,6 +213,15 @@ public class RatScript : MonoBehaviour
 
     public int[,] getWaterMap(){
         return this.waterMap;
+    }
+
+    public void DownloadMazeMap(int[,] map){
+        mazeMap = map;
+        Debug.Log(mazeMap[1,1]);
+    }
+
+    public int[,] getMazeMap(){
+        return this.mazeMap;
     }
 
     public void die(){
@@ -255,8 +270,25 @@ public class RatScript : MonoBehaviour
 
     public void spawnBabyRat(){
         rms.spawnBabyRat(this);
-
     }
 
+    public bool eatFoodFromBowl(){
+        return fms.reduceFoodAmountByFoodBowlName(foodBowlName);
+    }
+
+    public void setFoodBowlNameByPos(){
+        int ratX = (int)Mathf.Floor(ratTransform.position.x/10f);
+        int ratY = (int)Mathf.Floor(ratTransform.position.z/10f);
+        Debug.Log("ratX =" + ratX + ", ratY =" + ratY);
+        for(int i=ratX-1; i<=ratX+1; i++){
+            for(int j=ratY-1; j<=ratY+1; j++){
+                if(foodMap[i,j]==1){
+                    foodBowlName="foodbowl_" + i + "_" +j;
+                }
+            }
+        }
+    }
+
+    
   
 }

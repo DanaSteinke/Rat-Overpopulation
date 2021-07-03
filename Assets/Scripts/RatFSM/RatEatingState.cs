@@ -1,9 +1,13 @@
 using UnityEngine;
 
 public class RatEatingState : RatBaseState{
+    private string foodBowlName;
+    
     public override void EnterState(RatScript rs){
+        int[,] foodMap = rs.getFoodMap();
         rs.StopRunning();
-        rs.agent.velocity = Vector3.zero;
+        rs.agent.velocity = Vector3.zero;        
+        
        // Debug.Log("hunger = " + rs.hunger);
     }
 
@@ -25,9 +29,13 @@ public class RatEatingState : RatBaseState{
         }
     }
     public override void Update(RatScript rs){
-        rs.hunger = rs.hunger<1f ? rs.hunger+ rs.hungerRecoverRate*Time.deltaTime : 1f;
-        if(rs.hunger == 1f){
+        Debug.Log("foodBowlName = " + rs.foodBowlName);
+        if(rs.eatFoodFromBowl() && rs.hunger<=1f){
+            rs.hunger = rs.hunger<1f ? rs.hunger+ rs.hungerRecoverRate*Time.deltaTime : 1f;
+        }
+        else{
             rs.TransitionToState(rs.IdleState);
         }
+        
     }
 }

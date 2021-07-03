@@ -99,6 +99,8 @@ MonoBehaviour:
   id: 0
   rb: {fileID: 0}
   rms: {fileID: 0}
+  fmo: {fileID: 0}
+  fms: {fileID: 0}
   rm: {fileID: 0}
   ratTransform: {fileID: 0}
   agent: {fileID: 745515627633126152}
@@ -125,6 +127,7 @@ MonoBehaviour:
   energyHPRecoverRate: 0
   stressDecreaseRate: 0
   socialActivityDecreaseRate: 0
+  foodBowlName: 
 --- !u!195 &745515627633126152
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -241,13 +244,13 @@ PrefabInstance:
     - target: {fileID: 5074512353664290214, guid: 52b2c47e4573545e592e9b654949b62f,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5074512353664290214, guid: 52b2c47e4573545e592e9b654949b62f,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: b04a5f63e49854ae590f8e3c2ad79fd3, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: 52b2c47e4573545e592e9b654949b62f,
         type: 3}
       propertyPath: m_LocalRotation.w

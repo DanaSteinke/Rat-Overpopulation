@@ -47,10 +47,11 @@ public class DragControlScript : MonoBehaviour
 
                     if(name == "Rat"){
                         hitObject.SendMessage("checkDead", hitObject);
+                        isDragging = true;
                     } 
                     
                     screenPosition = Camera.main.WorldToScreenPoint(hitObject.transform.position);
-                    isDragging = true;
+                    
                 }
             }
 

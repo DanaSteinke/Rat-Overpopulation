@@ -1659,7 +1659,7 @@ MonoBehaviour:
   waterBottleModel: {fileID: 5586507106492037289, guid: 99f3d111a15c7405d8eb50bda426a120,
     type: 3}
   surface: {fileID: 625858226}
-  fm: {fileID: 0}
+  fm: {fileID: 1913941625}
   xOS: 10
   yOS: 10
   zOS: 10
@@ -2790,6 +2790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mg: {fileID: 994772757}
+  rms: {fileID: 1737495268}
 --- !u!4 &1913941626
 Transform:
   m_ObjectHideFlags: 0
