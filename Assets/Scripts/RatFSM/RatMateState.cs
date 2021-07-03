@@ -19,9 +19,13 @@ public class RatMateState : RatBaseState
     }
 
     public void ratMate(RatScript rs){
-        rs.energy-=rs.energyRate*5;
-        rs.spawnBabyRat();
-        Debug.Log("new rat spawned");
+        float babyNum = Random.Range(1f, 5f);
+        for(int i=0; i<babyNum; i++){
+            rs.energy-=rs.energyRate*5;
+            rs.babiesMade++;
+            rs.spawnBabyRat();
+            Debug.Log("new rat spawned");
+        }
     }
     
 }

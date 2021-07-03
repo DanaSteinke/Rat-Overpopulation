@@ -26,18 +26,23 @@ public class RatScript : MonoBehaviour
     public float actionRate;
     public float age;
     public float maxAge;
+    public int babiesMade;
+    public float timeStamp;
 
     public float hungerRate;
     public float energyRate;
     public float thirstRate;
     public float stressRate;
     public float HungerHPRate;
+    public float ThirstHPRate;
     public float hungerRecoverRate;
     public float thirstRecoverRate;
     public float energyRecoverRate;
     public float energyHPRecoverRate;
     public float stressDecreaseRate;
     public float socialActivityDecreaseRate;
+    public float playCoolDownRate;
+    public float fightCoolDownRate;
 
     private RatBaseState currentState;
 
@@ -76,26 +81,30 @@ public class RatScript : MonoBehaviour
         alive = true;
         newSpawned = true;
         HP = 1.0f;
-        hunger = 1.0f;
-        thirst = 1.0f;
+        hunger = Random.Range(0.5f, 1f);
+        thirst = Random.Range(0.5f, 1f);
         energy = 1.0f;
         stress = 0;
         socialActivity= 50;
         actionRate = 0.25f;
         age = 0;
-        maxAge = 10;
+        maxAge = Random.Range(9f, 11f);
+        babiesMade = 0;
 
         hungerRate = 0.02f;
         thirstRate = 0.03f;
         energyRate = hungerRate/4;
         stressRate = 0.001f;
         hungerRecoverRate = hungerRate*10f;
-        thirstRecoverRate = thirstRate*10f;
+        thirstRecoverRate = thirstRate*20f;
         energyRecoverRate = energyRate*10f;
         energyHPRecoverRate = energyRecoverRate;
-        HungerHPRate = energyHPRecoverRate/2f;
+        HungerHPRate = energyHPRecoverRate/10f;
+        ThirstHPRate = energyHPRecoverRate/2f;
         stressDecreaseRate = stressRate*10f;
         socialActivityDecreaseRate = 0.1f;
+        playCoolDownRate = 2f;
+        fightCoolDownRate = 2f;
 
 
         TransitionToState(SpawnState);
@@ -146,7 +155,7 @@ public class RatScript : MonoBehaviour
     }
 
     private void ratRoutine(){
-        age = age + 0.1f * Time.deltaTime;
+        age = age + 0.01f * Time.deltaTime;
         socialActivity = socialActivity > 0f ? socialActivity - socialActivityDecreaseRate * Time.deltaTime: 0f;
         hunger = hunger > 0f ? hunger - hungerRate * Time.deltaTime: 0f;     
         energy = energy > 0f ? energy - energyRate * Time.deltaTime: 0f;
@@ -171,6 +180,12 @@ public class RatScript : MonoBehaviour
     private void HealthChangeByHunger(){
         if(hunger<0.3f){
             HP = HP>0f? HP - HungerHPRate * Time.deltaTime : 0f;
+        }
+    }
+
+    private void HealthChangeByThirst(){
+        if(thirst<0.3f){
+            HP = HP>0f? HP - ThirstHPRate * Time.deltaTime : 0f;
         }
     }
 
@@ -262,7 +277,7 @@ public class RatScript : MonoBehaviour
     }
 
     public bool canRatsMate(){
-        if(age>2 && stress<0.5 && alive){
+        if(age>4 && stress<0.5 && alive && babiesMade<age-4){
             return true;
         }
         return false;
@@ -289,6 +304,12 @@ public class RatScript : MonoBehaviour
         }
     }
 
-    
+    public bool canPlayNow(){
+        return HP > 0.5 && timeStamp + playCoolDownRate > Time.time;
+    }
+
+    public bool canFightNow(){
+        return timeStamp + fightCoolDownRate > Time.time;
+    }
   
 }

@@ -21,10 +21,10 @@ public class RatIdleState : RatBaseState{
                 Debug.Log("rat collision");
                 rs.IncreaseSocialActivityByCollision();
                 if(Random.Range(0, 1)<rs.actionRate){
-                    if(rs.stress<0.5){
+                    if(rs.stress<0.5 && rs.canPlayNow() && otherRS.canPlayNow()){
                         rs.TransitionToState(rs.PlayingState);
                     }
-                    else{
+                    else if(rs.stress >=0.5 && rs.canFightNow()){
                         rs.TransitionToState(rs.FightingState);
                     }
                 }
@@ -36,11 +36,11 @@ public class RatIdleState : RatBaseState{
     }
 
     public override void Update(RatScript rs){
-        if(rs.hunger<0.5f && rs.stress<1){
-            rs.TransitionToState(rs.LookingForFoodState);
-        }
-        else if(rs.thirst<0.5f){
+        if(rs.thirst<0.5f && rs.stress<1){
             rs.TransitionToState(rs.LookingForWaterState);
+        }
+        else if(rs.hunger<0.5f){
+            rs.TransitionToState(rs.LookingForFoodState);
         }
         else if(rs.energy < 0.5f){
             rs.TransitionToState(rs.SleepingState);

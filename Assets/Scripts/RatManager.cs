@@ -271,6 +271,7 @@ public int yOS;
 
     public void spawnBabyRat(RatScript rs){
         GameObject newRat = Instantiate(RatObject, rs.gameObject.transform.position, Quaternion.identity);
+        newRat.name = "Rat";
         newRat.gameObject.SendMessage("DownloadFoodMap",foodMap);
         newRat.gameObject.SendMessage("DownloadWaterMap", waterMap);
         newRat.gameObject.SendMessage("DownloadMazeMap", mazeMap);

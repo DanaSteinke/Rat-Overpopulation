@@ -27,7 +27,7 @@ public class RatLookingForWaterState : RatBaseState{
         int ratX = (int)Mathf.Floor(rs.ratTransform.position.x/10f);
         int ratY = (int)Mathf.Floor(rs.ratTransform.position.z/10f);
 
-        if(waterMap[ratX, ratY]==1){
+        if(waterMap[ratX, ratY]==1 || waterMap[ratX, ratY]==2){
             rs.TransitionToState(rs.DrinkingState);
         }
 
@@ -39,7 +39,7 @@ public class RatLookingForWaterState : RatBaseState{
     }
 
     private void searchAndGo(RatScript rs){
-        int searchRange = 5;
+        int searchRange = 2;
         int[,] waterMap = rs.getWaterMap();
         int rows = waterMap.GetLength(0);
         int cols = waterMap.GetLength(1);
