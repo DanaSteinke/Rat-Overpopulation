@@ -2394,7 +2394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f597ebf0c2f98416389f4cc11682dc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupText: {fileID: 147787456485943222, guid: a2c916a1432094675aa7f10077d1f8e9,
+  popupText: {fileID: 147787456485943224, guid: a2c916a1432094675aa7f10077d1f8e9,
     type: 3}
 --- !u!4 &1591175433
 Transform:
@@ -2448,7 +2448,7 @@ MonoBehaviour:
     type: 3}
   RatList: []
   RatSpawnTrain: []
-  ptc: {fileID: 0}
+  ptc: {fileID: 1591175432}
   xOS: 0
   yOS: 0
   goms: {fileID: 986285740}
