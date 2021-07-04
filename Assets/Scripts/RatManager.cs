@@ -273,10 +273,13 @@ public int yOS;
     public void spawnBabyRat(RatScript rs){
         GameObject newRat = Instantiate(RatObject, rs.gameObject.transform.position, Quaternion.identity);
         newRat.name = "Rat";
-        newRat.gameObject.SendMessage("DownloadFoodMap",foodMap);
-        newRat.gameObject.SendMessage("DownloadWaterMap", waterMap);
-        newRat.gameObject.SendMessage("DownloadMazeMap", mazeMap);
-        newRat.gameObject.SendMessage("releaseNewSpawnedRat");
+
+        RatScript babyRs = newRat.GetComponent<RatScript>();
+        babyRs.DownloadMazeMap(mazeMap);
+        babyRs.DownloadFoodMap(foodMap);
+        babyRs.DownloadWaterMap(waterMap);
+        babyRs.releaseNewSpawnedRat();
+
         newRat.transform.parent = this.transform;
     }
 
@@ -312,5 +315,20 @@ public int yOS;
     public void popUpRatDrinkingText(RatScript rs){
         string text = "+1";
         ptc.PopupBlueText(text, rs.ratTransform);
+    }
+
+    public void popUpRatSleepingText(RatScript rs){
+        string text = "Zzz";
+        ptc.PopupBlackText(text, rs.ratTransform);
+    }
+
+    public void popUpRatLookingForWaterText(RatScript rs){
+        string text = "Looking for Water";
+        ptc.PopupGreenText(text, rs.ratTransform);
+    }
+
+    public void popUpRatLookingForFoodText(RatScript rs){
+        string text = "Looking for Food";
+        ptc.PopupGreenText(text, rs.ratTransform);
     }
 }

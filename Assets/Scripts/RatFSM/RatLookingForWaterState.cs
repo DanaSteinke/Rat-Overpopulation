@@ -1,20 +1,12 @@
 using UnityEngine;
 
 public class RatLookingForWaterState : RatBaseState{
+
+    private float popupTextTime;
+
     public override void EnterState(RatScript rs){
         rs.StopRunning();
         searchAndGo(rs);
-        /*int[,] foodMap = rs.getFoodMap();
-        int ratX = (int)Mathf.Floor(rs.ratTransform.position.x/10f);
-        int ratY = (int)Mathf.Floor(rs.ratTransform.position.z/10f);
-
-        for(int i=0; i<foodMap.GetLength(0); i++){
-            for(int j=0; j<foodMap.GetLength(1); j++){
-                if(foodMap[i, j] == 1){
-                    rs.RunToDestination(new Vector3(i*10f, rs.ratTransform.position.y, j*10f));
-                }
-            }
-        }*/
     }
 
     public override void OnCollisionEnter(RatScript rs, Collision other){
@@ -26,6 +18,11 @@ public class RatLookingForWaterState : RatBaseState{
         int[,] waterMap = rs.getWaterMap();
         int ratX = (int)Mathf.Floor(rs.ratTransform.position.x/10f);
         int ratY = (int)Mathf.Floor(rs.ratTransform.position.z/10f);
+
+        if(popupTextTime < Time.time - 1f){
+            popupTextTime = Time.time;
+            rs.popUpRatLookingForWaterText();
+        }
 
         if(waterMap[ratX, ratY]==1 || waterMap[ratX, ratY]==2){
             rs.TransitionToState(rs.DrinkingState);
