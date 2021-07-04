@@ -53,7 +53,7 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
 
 	public void SetFoodBowlIsClickable(){
 		foreach(KeyValuePair<string, FoodBowlScript> entry in foodScriptDictionary){
-			Debug.Log("key" + entry.Key);
+			//Debug.Log("key" + entry.Key);
 			FoodBowlScript fs = entry.Value;
 			GlobalScript.SetLayerRecursively(fs.gameObject,0);
 		}

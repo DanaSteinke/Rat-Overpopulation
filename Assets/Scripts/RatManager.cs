@@ -10,6 +10,8 @@ public GameObject RatContainer;
 public GameObject RatStopper;
 public GameObject[] RatList;
 public GameObject[] RatSpawnTrain;
+public PopupTextController ptc;
+public WaterBottleManager wbms;
 
 public int xOS;
 public int yOS;
@@ -272,10 +274,13 @@ public int yOS;
     public void spawnBabyRat(RatScript rs){
         GameObject newRat = Instantiate(RatObject, rs.gameObject.transform.position, Quaternion.identity);
         newRat.name = "Rat";
-        newRat.gameObject.SendMessage("DownloadFoodMap",foodMap);
-        newRat.gameObject.SendMessage("DownloadWaterMap", waterMap);
-        newRat.gameObject.SendMessage("DownloadMazeMap", mazeMap);
-        newRat.gameObject.SendMessage("releaseNewSpawnedRat");
+
+        RatScript babyRs = newRat.GetComponent<RatScript>();
+        babyRs.DownloadMazeMap(mazeMap);
+        babyRs.DownloadFoodMap(foodMap);
+        babyRs.DownloadWaterMap(waterMap);
+        babyRs.releaseNewSpawnedRat();
+
         newRat.transform.parent = this.transform;
     }
 
@@ -301,5 +306,42 @@ public int yOS;
         Debug.Log("food map generated" + foodMap[8,8]);
         //Time.timeScale=0;
         
+    }
+
+    public void popUpRatEatingText(RatScript rs){
+        string text = "+1";
+        ptc.PopupYellowText(text, rs.ratTransform);
+    }
+
+    public void popUpRatDrinkingText(RatScript rs){
+        string text = "+1";
+        ptc.PopupBlueText(text, rs.ratTransform);
+    }
+
+    public void popUpRatSleepingText(RatScript rs){
+        string text = "Zzz";
+        ptc.PopupBlackText(text, rs.ratTransform);
+    }
+
+    public void popUpRatLookingForWaterText(RatScript rs){
+        string text = "Looking for Water";
+        ptc.PopupGreenText(text, rs.ratTransform);
+    }
+
+    public void popUpRatLookingForFoodText(RatScript rs){
+        string text = "Looking for Food";
+        ptc.PopupGreenText(text, rs.ratTransform);
+    }
+
+    public bool ReduceWaterAmountByBottleID(int[] bottleID){
+        return wbms.ReduceWaterAmountByBottleID(bottleID);
+    }
+
+    public int[] getWaterBottleIDByRatLocation(RatScript rs){
+        return wbms.GetWaterBottleIDByRatLocation(rs.ratTransform.position);
+    }
+
+    public Vector3 getWaterBottlePositionByBottleID(int[] bottleID){
+        return wbms.GetWaterBottlePositionByBottleID(bottleID);
     }
 }

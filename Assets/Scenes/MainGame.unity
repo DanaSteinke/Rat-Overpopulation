@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10393550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 10393552}
+  - component: {fileID: 10393551}
+  m_Layer: 0
+  m_Name: WaterBottleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &10393551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10393550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57368b1b37ab54e34975b43f4e244df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mgs: {fileID: 994772757}
+  unitNumber: 0
+--- !u!4 &10393552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10393550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 89.85496, y: 2.6806736, z: 65.83334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &31633545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,11 +1705,13 @@ MonoBehaviour:
     type: 3}
   surface: {fileID: 625858226}
   fm: {fileID: 1913941625}
+  wbms: {fileID: 10393551}
   xOS: 10
   yOS: 10
   zOS: 10
   unitNumber: 0
   ratNumber: 0
+  waterBottlePerUnit: 4
 --- !u!4 &994772758
 Transform:
   m_ObjectHideFlags: 0
@@ -2359,6 +2406,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577532622}
   m_CullTransparentMesh: 1
+--- !u!1 &1591175431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1591175433}
+  - component: {fileID: 1591175432}
+  m_Layer: 0
+  m_Name: PopupTextController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1591175432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591175431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f597ebf0c2f98416389f4cc11682dc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupText: {fileID: 147787456485943224, guid: a2c916a1432094675aa7f10077d1f8e9,
+    type: 3}
+--- !u!4 &1591175433
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591175431}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 453.8545, y: 272.77664, z: -174.31978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1737495267
 GameObject:
   m_ObjectHideFlags: 0
@@ -2397,6 +2489,8 @@ MonoBehaviour:
     type: 3}
   RatList: []
   RatSpawnTrain: []
+  ptc: {fileID: 1591175432}
+  wbms: {fileID: 10393551}
   xOS: 0
   yOS: 0
   goms: {fileID: 986285740}
