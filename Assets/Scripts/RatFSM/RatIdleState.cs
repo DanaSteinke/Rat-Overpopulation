@@ -19,11 +19,11 @@ public class RatIdleState : RatBaseState{
     }
 
     public override void Update(RatScript rs){
-        if(rs.thirst<0.5f && rs.stress<1){
+        if(rs.thirst<0.5f){
             rs.StopRunning();
             rs.TransitionToState(rs.LookingForWaterState);
         }
-        else if(rs.hunger<0.5f){
+        else if(rs.hunger<0.5f && rs.stress<1){
             rs.StopRunning();
             rs.TransitionToState(rs.LookingForFoodState);
         }

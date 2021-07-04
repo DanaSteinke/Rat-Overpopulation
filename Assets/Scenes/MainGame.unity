@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mgs: {fileID: 994772757}
+  unitNumber: 0
 --- !u!4 &10393552
 Transform:
   m_ObjectHideFlags: 0
@@ -2489,7 +2490,7 @@ MonoBehaviour:
   RatList: []
   RatSpawnTrain: []
   ptc: {fileID: 1591175432}
-  wbms: {fileID: 0}
+  wbms: {fileID: 10393551}
   xOS: 0
   yOS: 0
   goms: {fileID: 986285740}

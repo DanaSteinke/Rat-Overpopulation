@@ -23,7 +23,7 @@ public class RatLookingForWaterState : RatBaseState{
         if(popupTextTime < Time.time - 1f){
             popupTextTime = Time.time;
             rs.popUpRatLookingForWaterText();
-        } 
+        }
 
         if(waterMap[ratX, ratY]==1 || waterMap[ratX, ratY]==2){
             rs.TransitionToState(rs.DrinkingState);
