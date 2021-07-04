@@ -1,0 +1,381 @@
+Using pre-set license
+Pro License: NO
+
+ COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2021.1.13f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/danasteinke/Desktop/Rat_Overpopulation
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+50503
+Successfully changed project path to: /Users/danasteinke/Desktop/Rat_Overpopulation
+/Users/danasteinke/Desktop/Rat_Overpopulation
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 34.72 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.13f1 (a03098edbbe0)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.1.13f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/danasteinke/Desktop/Rat_Overpopulation/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+2021-07-04 14:07:23.760 Unity[2899:130160] Color LCD preferred device: AMD Radeon Pro 5300M (high power)
+2021-07-04 14:07:23.760 Unity[2899:130160] Metal devices available: 2
+2021-07-04 14:07:23.760 Unity[2899:130160] 0: AMD Radeon Pro 5300M (high power)
+2021-07-04 14:07:23.760 Unity[2899:130160] 1: Intel(R) UHD Graphics 630 (low power)
+2021-07-04 14:07:23.762 Unity[2899:130160] Using device AMD Radeon Pro 5300M (high power)
+Initializing Metal device caps: AMD Radeon Pro 5300M
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2021.1.13f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2021.1.13f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/Applications/Unity/Hub/Editor/2021.1.13f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56899
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2021.1.13f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2021.1.13f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000632 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 26.86 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.757 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2757ms)
+		BeginReloadAssembly (52ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (516ms)
+			LoadAssemblies (51ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (228ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (41ms)
+			SetupLoadedEditorAssemblies (201ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (27ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (130ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001708 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.158 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1158ms)
+		BeginReloadAssembly (165ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (917ms)
+			LoadAssemblies (74ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (362ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (293ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (39ms)
+				ProcessInitializeOnLoadAttributes (242ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Hub/Editor/2021.1.13f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1454 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 145.1 MB.
+System memory in use after: 145.2 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1904.
+Total: 1.992058 ms (FindLiveObjects: 0.118959 ms CreateObjectMapping: 0.044960 ms MarkObjects: 1.770636 ms  DeleteObjects: 0.056628 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Art/zebra texture.png
+  artifactKey: Guid(2b213d90510ac49668cdbbf76bd6391e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/zebra texture.png using Guid(2b213d90510ac49668cdbbf76bd6391e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad288c77352c95fc6ffdcfe7b3e21a8b') in 1.218279 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Art/raticon.png
+  artifactKey: Guid(28d761d2d481d4369a285d2e4fba5bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/raticon.png using Guid(28d761d2d481d4369a285d2e4fba5bf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '073bfd320901eb68959442f35bcb891e') in 0.011054 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Art/ratinroom.png
+  artifactKey: Guid(8f6550a1a8c8444ac9008dfd8c444bb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/ratinroom.png using Guid(8f6550a1a8c8444ac9008dfd8c444bb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da9251628f70c79bdd95942c185ce7ea') in 0.008854 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Art/waterbottle.fbx
+  artifactKey: Guid(cef771e4648534cd28dc30daa00aa040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/waterbottle.fbx using Guid(cef771e4648534cd28dc30daa00aa040) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31647d6e6435a6450c3a221d271b4939') in 1.598811 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Art/food.fbx
+  artifactKey: Guid(312f0372f477d4cc0aeede35c8b7afe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/food.fbx using Guid(312f0372f477d4cc0aeede35c8b7afe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75f66031d8cc72e77bcdf59eda32e1be') in 0.018640 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Art/foodbowl.fbx
+  artifactKey: Guid(92bc1af8c2caa41bab8a618553aa4e0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/foodbowl.fbx using Guid(92bc1af8c2caa41bab8a618553aa4e0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd73483a107fca2ed4922dafcb3476c9') in 0.020193 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Art/rat.fbx
+  artifactKey: Guid(52b2c47e4573545e592e9b654949b62f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/rat.fbx using Guid(52b2c47e4573545e592e9b654949b62f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0d81813e77762e97992d0f9aabedd00') in 0.171181 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Art/ratmoving.fbx
+  artifactKey: Guid(841f56cacd729464d93e04446db4cb29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/ratmoving.fbx using Guid(841f56cacd729464d93e04446db4cb29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae47a527ef1516516f48af672c92a3c2') in 0.029067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.005027 seconds.
+  path: Assets/Art/clipboard.fbx
+  artifactKey: Guid(51f67eb8f444b483b946646f8fd50495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/clipboard.fbx using Guid(51f67eb8f444b483b946646f8fd50495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b6802285df12ad8a52bb57295b19287') in 0.024874 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.042426 seconds.
+  path: Assets/Art/clipboard.fbx
+  artifactKey: Guid(51f67eb8f444b483b946646f8fd50495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/clipboard.fbx using Guid(51f67eb8f444b483b946646f8fd50495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df4ec30a7d335d3d77540f94d92d9aa8') in 0.020054 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.434004 seconds.
+  path: Assets/Art/clipboard.fbx
+  artifactKey: Guid(51f67eb8f444b483b946646f8fd50495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/clipboard.fbx using Guid(51f67eb8f444b483b946646f8fd50495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b92167f9384a185379fb5a15e4324bd5') in 0.017602 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Art/clipboardtexture.png
+  artifactKey: Guid(a77d99f53fc274c5c8a1edad9240addc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/clipboardtexture.png using Guid(a77d99f53fc274c5c8a1edad9240addc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '659b3d4cdfef68c1ee5ac47417c2cfe3') in 0.007501 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.047257 seconds.
+  path: Assets/Scenes/MainGame.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/MainGame.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f78240d9d07b6401b31f31ae324040dd') in 0.001347 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 118.135986 seconds.
+  path: Assets/Objects/Floor.prefab
+  artifactKey: Guid(b246eb3074150402ea586d87baf35c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Floor.prefab using Guid(b246eb3074150402ea586d87baf35c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef243eece4b8b1b89f279a69f17fb74c') in 0.428117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Objects/PopupTextContainer.prefab
+  artifactKey: Guid(a2c916a1432094675aa7f10077d1f8e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/PopupTextContainer.prefab using Guid(a2c916a1432094675aa7f10077d1f8e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '757cd48dfb4b8abc3c04cb4bdb88ad01') in 0.058352 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Objects/RatContainer.prefab
+  artifactKey: Guid(150c8a435a13e449e807f171d187700b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/RatContainer.prefab using Guid(150c8a435a13e449e807f171d187700b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.MonoBehaviour:.ctor () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/MonoBehaviour.bindings.cs:20)
+RatManager:.ctor () (at Assets/Scripts/RatManager.cs:33)
+RatMateState:.ctor () (at Assets/Scripts/RatFSM/RatMateState.cs:5)
+RatScript:.ctor () (at Assets/Scripts/RatScript.cs:62)
+
+[/Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.MonoBehaviour:.ctor () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/MonoBehaviour.bindings.cs:20)
+RatManager:.ctor () (at Assets/Scripts/RatManager.cs:33)
+RatMateState:.ctor () (at Assets/Scripts/RatFSM/RatMateState.cs:5)
+RatScript:.ctor () (at Assets/Scripts/RatScript.cs:62)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:101)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:95)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:666)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:878)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /Users/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /Users/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '372cb616e0c53f4c7d89a221437fa6d4') in 0.016684 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Objects/WaterBottle_1.prefab
+  artifactKey: Guid(99f3d111a15c7405d8eb50bda426a120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/WaterBottle_1.prefab using Guid(99f3d111a15c7405d8eb50bda426a120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c117abe766c99ed259e6ebc7bbf46dd0') in 0.009692 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/Objects/RatStopper.prefab
+  artifactKey: Guid(ba63ea6707a034a8880a7ce483422ba1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/RatStopper.prefab using Guid(ba63ea6707a034a8880a7ce483422ba1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '527d1b6c58e851e5d7e86c8373578c3a') in 0.002643 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Objects/Rat.prefab
+  artifactKey: Guid(5126a54c2a60f4d5a8a347fa91dd7eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Rat.prefab using Guid(5126a54c2a60f4d5a8a347fa91dd7eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.MonoBehaviour:.ctor () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/MonoBehaviour.bindings.cs:20)
+RatManager:.ctor () (at Assets/Scripts/RatManager.cs:33)
+RatMateState:.ctor () (at Assets/Scripts/RatFSM/RatMateState.cs:5)
+RatScript:.ctor () (at Assets/Scripts/RatScript.cs:62)
+
+[/Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.MonoBehaviour:.ctor () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/MonoBehaviour.bindings.cs:20)
+RatManager:.ctor () (at Assets/Scripts/RatManager.cs:33)
+RatMateState:.ctor () (at Assets/Scripts/RatFSM/RatMateState.cs:5)
+RatScript:.ctor () (at Assets/Scripts/RatScript.cs:62)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:101)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:95)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:666)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /Users/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:878)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /Users/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /Users/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '3e63ab7f3fe31f0b2710f416c340792b') in 0.010252 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Objects/Wall.prefab
+  artifactKey: Guid(ef292d29cccfb497b9a32de682cdfcda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Wall.prefab using Guid(ef292d29cccfb497b9a32de682cdfcda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16c02ee8e044086145f89411f5eb272e') in 0.006670 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Objects/FoodBowl.prefab
+  artifactKey: Guid(1c76496a9e4f8427c9ca227916787ad1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/FoodBowl.prefab using Guid(1c76496a9e4f8427c9ca227916787ad1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '380d048661c49771c751c4dabc3aeb86') in 0.008740 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001929 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.132 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1133ms)
+		BeginReloadAssembly (120ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (57ms)
+		EndReloadAssembly (937ms)
+			LoadAssemblies (72ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (361ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (268ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (38ms)
+				ProcessInitializeOnLoadAttributes (217ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1442 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 181.0 MB.
+System memory in use after: 181.1 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2015.
+Total: 2.023877 ms (FindLiveObjects: 0.131341 ms CreateObjectMapping: 0.048507 ms MarkObjects: 1.824257 ms  DeleteObjects: 0.018920 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 962.831883 seconds.
+  path: Assets/Objects/Clipboard.prefab
+  artifactKey: Guid(317811f6bd7984cee81053ef72a4b376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Clipboard.prefab using Guid(317811f6bd7984cee81053ef72a4b376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ec790d6537436389ff6ccbafc4f5e60') in 0.064576 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.746894 seconds.
+  path: Assets/Scenes/MainGame.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/MainGame.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dba44da08d0a9284a997eebf86a5e9f') in 0.002273 seconds 
