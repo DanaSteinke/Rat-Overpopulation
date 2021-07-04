@@ -10,29 +10,17 @@ public class RatDrinkingState : RatBaseState{
     }
 
     public override void OnCollisionEnter(RatScript rs, Collision other){
-        if(other.gameObject.name=="Rat" && !rs.newSpawned && rs.alive){
-            RatScript otherRS = other.gameObject.GetComponent<RatScript>();
-            if(otherRS.alive){
-                Debug.Log("rat collision");
-                rs.IncreaseSocialActivityByCollision();
-                if(Random.Range(0, 1)<rs.actionRate){
-                    if(rs.stress<0.5){
-                        rs.TransitionToState(rs.PlayingState);
-                    }
-                    else{
-                        rs.TransitionToState(rs.FightingState);
-                    }
-                }
-            }
-        }
+        rs.HandleOnCollisionEnterStates(other);
     }
     public override void Update(RatScript rs){
-        rs.thirst = rs.thirst<1f ? rs.thirst+ rs.thirstRecoverRate*Time.deltaTime : 1f;
-        if(popupTextTime < Time.time - 1f){
-            popupTextTime = Time.time;
-            rs.popUpRatDrinkingText();
+        if(rs.drinkWaterFromBottle() && rs.thirst < 1f){
+            rs.thirst = rs.thirst<1f ? rs.thirst+ rs.thirstRecoverRate*Time.deltaTime : 1f;
+            if(popupTextTime < Time.time - 2f){
+                popupTextTime = Time.time;
+                rs.popUpRatDrinkingText();
+            }
         }
-        if(rs.thirst == 1f){
+        else{
             rs.TransitionToState(rs.IdleState);
         }
     }

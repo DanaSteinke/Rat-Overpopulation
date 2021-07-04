@@ -11,6 +11,7 @@ public GameObject RatStopper;
 public GameObject[] RatList;
 public GameObject[] RatSpawnTrain;
 public PopupTextController ptc;
+public WaterBottleManager wbms;
 
 public int xOS;
 public int yOS;
@@ -330,5 +331,17 @@ public int yOS;
     public void popUpRatLookingForFoodText(RatScript rs){
         string text = "Looking for Food";
         ptc.PopupGreenText(text, rs.ratTransform);
+    }
+
+    public bool ReduceWaterAmountByBottleID(int[] bottleID){
+        return wbms.ReduceWaterAmountByBottleID(bottleID);
+    }
+
+    public int[] getWaterBottleIDByRatLocation(RatScript rs){
+        return wbms.GetWaterBottleIDByRatLocation(rs.ratTransform.position);
+    }
+
+    public Vector3 getWaterBottlePositionByBottleID(int[] bottleID){
+        return wbms.GetWaterBottlePositionByBottleID(bottleID);
     }
 }

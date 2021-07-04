@@ -47,6 +47,7 @@ public class RatScript : MonoBehaviour
     private RatBaseState currentState;
 
     public string foodBowlName;
+    public int[] bottleID;
 
     public readonly RatIdleState IdleState = new RatIdleState();
     public readonly RatLookingForFoodState LookingForFoodState = new RatLookingForFoodState();
@@ -67,7 +68,7 @@ public class RatScript : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Rat start: " + this.transform.position);
+      //  Debug.Log("Rat start: " + this.transform.position);
         agent.enabled = false;
         rb = GetComponent<Rigidbody>();
         ratTransform = GetComponent<Transform>();
@@ -126,7 +127,7 @@ public class RatScript : MonoBehaviour
 
     public void objectDropped(){
         //Vector3 pos = this.transform.position;
-        Debug.Log("Rat Dropped");
+     //   Debug.Log("Rat Dropped");
         if(newSpawned){
             releaseNewSpawnedRat();
         }
@@ -146,8 +147,29 @@ public class RatScript : MonoBehaviour
 
     public void OnCollisionEnter(Collision other){
        
-        Debug.Log("collision: " + other);
+      //  Debug.Log("collision: " + other);
         currentState.OnCollisionEnter(this, other);
+    }
+
+    public void HandleOnCollisionEnterStates(Collision other){
+        if(other.gameObject.name=="Rat" && !newSpawned && alive){
+            RatScript otherRS = other.gameObject.GetComponent<RatScript>();
+            if(otherRS.alive){
+             //   Debug.Log("rat collision");
+                IncreaseSocialActivityByCollision();
+                if(Random.Range(0, 1)<actionRate){
+                    if(stress<0.5 && canPlayNow() && otherRS.canPlayNow()){
+                        TransitionToState(PlayingState);
+                    }
+                    else if(stress >=0.5 && canFightNow()){
+                        TransitionToState(FightingState);
+                    }
+                }
+            }
+            if(canRatsMate() && otherRS.canRatsMate()){
+                TransitionToState(MateState);
+            }
+        }
     }
 
     public void IncreaseSocialActivityByCollision(){
@@ -163,7 +185,7 @@ public class RatScript : MonoBehaviour
         
         if(socialActivity<10 || socialActivity>200){
             stress+=stressRate;
-            Debug.Log("stress increase");
+           // Debug.Log("stress increase");
         }
         else{
             stress = stress > 0f ? stress - stressDecreaseRate * Time.deltaTime: 0f;
@@ -205,7 +227,7 @@ public class RatScript : MonoBehaviour
     //using pointer, not a hard copy of the map
     public void DownloadFoodMap(int[,] map){
         foodMap = map;
-        Debug.Log(foodMap[1,1]);
+       // Debug.Log(foodMap[1,1]);
     }
 
     public void UploadFoodMap(){
@@ -219,7 +241,7 @@ public class RatScript : MonoBehaviour
     //using pointer, not a hard copy of the map
     public void DownloadWaterMap(int[,] map){
         waterMap = map;
-        Debug.Log(waterMap[1,1]);
+        //(waterMap[1,1]);
     }
 
     public void UploadWaterMap(){
@@ -232,7 +254,7 @@ public class RatScript : MonoBehaviour
 
     public void DownloadMazeMap(int[,] map){
         mazeMap = map;
-        Debug.Log(mazeMap[1,1]);
+        //Debug.Log(mazeMap[1,1]);
     }
 
     public int[,] getMazeMap(){
@@ -289,6 +311,18 @@ public class RatScript : MonoBehaviour
 
     public bool eatFoodFromBowl(){
         return fms.reduceFoodAmountByFoodBowlName(foodBowlName);
+    }
+
+    public bool drinkWaterFromBottle(){
+        return rms.ReduceWaterAmountByBottleID(bottleID);
+    }
+
+    public Vector3 getWaterBottlePositionByBottleID(){
+        return rms.getWaterBottlePositionByBottleID(bottleID);
+    }
+
+    public int[] getWaterBottleIDByRatLocation(){
+        return rms.getWaterBottleIDByRatLocation(this);
     }
 
     public void setFoodBowlNameByPos(){

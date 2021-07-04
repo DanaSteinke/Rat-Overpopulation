@@ -13,6 +13,7 @@ public GameObject waterBottleModel;
 public NavMeshSurface surface;
 
 public FoodManager fm;
+public WaterBottleManager wbms;
 
 public float xOS = 10;
 public float yOS = 0.1f;
@@ -48,6 +49,7 @@ public int[,] livingRoomUnit = new int[,]{
 {1, 1, 1, 0, 1, 1, 1, 0},
 {0, 0, 0, 0, 0, 0, 0, 0},
 };
+public int waterBottlePerUnit = 4;
 public static int Wall_Code = 1;
 public static int Food_Bowl_Code = 2;
 public static int Water_Bottle_Code = 3;
@@ -61,12 +63,14 @@ public int[,] unitPattern = new int[,]{
 };
 
 public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<string, FoodBowlScript>();
+public WaterBottleScript[,] waterBottleScriptMap;
 
 	void Awake(){
 		unitNumber = PlayerPrefs.GetInt("Unit_Number") == 0 ? 1 : PlayerPrefs.GetInt("Unit_Number");
 		ratNumber = PlayerPrefs.GetInt("Rat_Number") == 0 ? 10 : PlayerPrefs.GetInt("Rat_Number");
 		//Debug.Log(unitNumber + " " + ratNumber);
 		map = renderMazeMap(unitNumber);
+		waterBottleScriptMap = new WaterBottleScript[unitNumber, waterBottlePerUnit];
 	}
     // Start is called before the first frame update
     void Start()
@@ -82,6 +86,9 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
 		fm.UpdateFoodScriptDic(foodScriptDictionary);
 		fm.SetFoodBowlIsClickable();
 
+		wbms.UpdateWaterBottleScriptMap(waterBottleScriptMap);
+		wbms.SetWaterBottleIsClickable();
+
 
 		surface.BuildNavMesh();
     }
@@ -95,6 +102,8 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
     void generateMaze(int[,] map){
 	int row = map.GetLength(0);
 	int col = map.GetLength(1);
+	int unitRow = row/16;
+	int unitCol = col/16;
 	for(int i=0; i<row; i++){
 	    for(int j=0; j<col; j++){
 			if(map[i, j] == Wall_Code){
@@ -102,7 +111,7 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
 			} else if(map[i,j] == Food_Bowl_Code) {
 				createFoodBowl(i, j);
 			} else if(map[i, j] == Water_Bottle_Code){
-				createWaterBottle(i, j);
+				createWaterBottle(i, j, unitCol);
 			}
 	    }
 	}
@@ -135,11 +144,12 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
 		foodScriptDictionary.Add(foodBowlObject.name, foodScript);
 	}
 
-	void createWaterBottle(int i, int j){
+	void createWaterBottle(int i, int j, int unitCol){
 		Vector3 position = new Vector3(i*xOS, 15f, j*zOS);
 		GameObject waterBottleObject = Instantiate(waterBottleModel, position, Quaternion.identity);
 		waterBottleObject.name = "waterBottle_"+i+"_"+j;
 		waterBottleObject.transform.parent = this.transform;
+		waterBottleScriptMap[i/16*unitCol + j/16, (i%16)/8*2 + (j%16)/8] = waterBottleObject.GetComponent<WaterBottleScript>();
 	}
 
     public int[,] getMap(){
@@ -166,9 +176,13 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
 		rows = x*16+4;
 		cols = y*16+4;
 
+		int counter = 0;
 		int[,] result = new int[rows, cols];
 		for(int i=0; i<x; i++){
 			for(int j=0; j<y; j++){
+				if(counter>=unitNumber){
+					break;
+				}
 				for(int ip = 0; ip<unitPattern.GetLength(0); ip++){
 					for(int jp = 0; jp<unitPattern.GetLength(1); jp++){
 						if(unitPattern[ip, jp] == 1){
@@ -186,6 +200,7 @@ public Dictionary<string, FoodBowlScript> foodScriptDictionary = new Dictionary<
 						}
 					}
 				}
+				counter++;
 			}
 		}
 		for(int i=0; i<rows; i++){
