@@ -19,12 +19,9 @@ public class ClipboardScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
-       if(anim!=null && anim.GetCurrentAnimatorStateInfo(0).IsName("Idle_Pause")){
-           Time.timeScale = 0;
-       } 
-*/
-       if(anim!=null && anim.GetCurrentAnimatorStateInfo(0).IsName("Idle_Deactivated")){
+    {
+        
+        if(anim!=null && anim.GetCurrentAnimatorStateInfo(0).IsName("Idle_Deactivated")){
         menuCB.SetActive(false);
        } 
     }
