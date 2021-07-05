@@ -31,6 +31,7 @@ public int yOS;
     public float timer = 0;
     public LinkedList<int> totalRatStack = new LinkedList<int>();
     public LinkedList<int> deadRatStack = new LinkedList<int>();
+    public LinkedList<int> totalAliveRatStack = new LinkedList<int>();
     public bool isGameOver = false;
 
     void Awake(){
@@ -264,6 +265,7 @@ public int yOS;
             timer = 0f;
             totalRatStack.AddLast(totalRatNumber);
             deadRatStack.AddLast(deadRatNumber);
+            totalAliveRatStack.AddLast(totalRatNumber - deadRatNumber);
        //     Debug.Log("Sampled data: " + deadRatStack);
             if(totalRatNumber> 0 && deadRatNumber == totalRatNumber && !isGameOver){
                 gameOver();

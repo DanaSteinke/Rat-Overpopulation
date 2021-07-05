@@ -30,5 +30,13 @@ public static class GlobalScript
         }
     }
 
+    public static void print1DArray(int[] map){
+        string m = "";
+        for(int col=0; col<map.GetLength(0); col++){
+            m=m+string.Format("{0}\t", map[col]);
+        }
+       Debug.Log(m);
+    }
+
   // public static 
 }

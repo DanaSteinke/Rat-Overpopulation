@@ -12,6 +12,7 @@ public class GameOverManager : MonoBehaviour
     private RectTransform RatPopulationGraphTransform;
     public int[] totalRatData;
     public int[] deadRatData;
+    public int[] totalAliveRatData;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,17 +29,23 @@ public class GameOverManager : MonoBehaviour
         GameOverPanel.SetActive(true);
         totalRatData = LinkedListToArray(rm.totalRatStack);
         deadRatData = LinkedListToArray(rm.deadRatStack);
+        totalAliveRatData = LinkedListToArray(rm.totalAliveRatStack);
         rm.totalRatStack.CopyTo(totalRatData, 0);
         rm.deadRatStack.CopyTo(deadRatData, 0);
 
         //drawGraphByData(totalRatData);
-        drawGraphByData(deadRatData);
+        drawGraphByData(totalRatData, new Color(0f,0f,0f));
+        drawGraphByData(deadRatData, new Color(153f,0f,17f, 0.5f));
+        drawGraphByData(totalAliveRatData, new Color(0f,255f,0f));
+        Debug.Log(totalRatData);
+        GlobalScript.print1DArray(totalRatData);
     }
 
     private GameObject CreateCircle(Vector2 anchoredPosition){
         GameObject gameObject = new GameObject("circle", typeof(Image));
         gameObject.transform.SetParent(RatPopulationGraphTransform, false);
-        gameObject.GetComponent<Image>().sprite = circleSprite;
+        //gameObject.GetComponent<Image>().sprite = circleSprite;
+        gameObject.GetComponent<Image>().color = new Color(0,0,0,0);
 
         RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
         rectTransform.anchoredPosition = anchoredPosition;
@@ -48,12 +55,17 @@ public class GameOverManager : MonoBehaviour
 
         return gameObject;
     }
-    private void drawGraphByData(int[] data){
+    private void drawGraphByData(int[] data, Color color){
         GameObject singleGraphContainer = new GameObject();
         float graphHeight = RatPopulationGraphTransform.sizeDelta.y;
         float graphWidth = RatPopulationGraphTransform.sizeDelta.x;
         int size = data.GetLength(0);
-        float yMaximum = (float)data[size-1]+1;
+        float yMaximum = 0;
+        for(int i=0; i<data.GetLength(0); i++){
+            if(data[i]>yMaximum){
+                yMaximum = data[i];
+            }
+        }
         float x_delta = graphWidth/(size+1);
 
         GameObject lastCircleGameObject = null;
@@ -63,16 +75,16 @@ public class GameOverManager : MonoBehaviour
             GameObject circleGameObject = CreateCircle(new Vector2(xPosition, yPosition));
 
             if(lastCircleGameObject!=null){
-                CreateDotConnection(lastCircleGameObject.GetComponent<RectTransform>().anchoredPosition, circleGameObject.GetComponent<RectTransform>().anchoredPosition);
+                CreateDotConnection(lastCircleGameObject.GetComponent<RectTransform>().anchoredPosition, circleGameObject.GetComponent<RectTransform>().anchoredPosition, color);
             }
             lastCircleGameObject = circleGameObject;
         }
     }
 
-    private void CreateDotConnection(Vector2 dotPositionA, Vector2 dotPositionB){
+    private void CreateDotConnection(Vector2 dotPositionA, Vector2 dotPositionB, Color color){
         GameObject gameObject = new GameObject("dotConnection", typeof(Image));
         gameObject.transform.SetParent(RatPopulationGraphTransform, false);
-        gameObject.GetComponent<Image>().color = new Color(153f, 0f, 17f, 0.5f);
+        gameObject.GetComponent<Image>().color = color;
 
         RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
         Vector2 dir = (dotPositionB - dotPositionA).normalized;

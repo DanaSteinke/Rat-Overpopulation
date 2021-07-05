@@ -316,6 +316,7 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/CameraController.cs"
+"Assets/Scripts/ClipboardScript.cs"
 "Assets/Scripts/DragControlScript.cs"
 "Assets/Scripts/FoodBowlScript.cs"
 "Assets/Scripts/FoodManager.cs"
